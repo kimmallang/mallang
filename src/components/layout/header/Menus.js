@@ -7,8 +7,8 @@ function Menus() {
     const [menus, setMenus] = useState([
         { path: '/news', text: '뉴스', isOn: isMenuOn('/news') },
         { path: '/book', text: '책 리뷰', isOn: isMenuOn('/book') },
-        { path: '/board', text: '자유게시판', isOn: isMenuOn('/board') },
-        { path: '/study', text: '스터디 모집', isOn: isMenuOn('/study') },
+        { path: '/board', text: '게시판', isOn: isMenuOn('/board') },
+        { path: '/study', text: '스터디', isOn: isMenuOn('/study') },
     ]);
 
     const handleClick = (index) => {

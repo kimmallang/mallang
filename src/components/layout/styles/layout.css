@@ -2,14 +2,14 @@
 html { height: 100%; }
 body { height: 100%; background-color: #FFF; }
 body > div { height: 100%; }
-header > div, main { max-width: 1280px; margin: 0 auto; }
+header > div, main { max-width: 1280px; min-width: 350px; margin: 0 auto; }
 
 header { position: fixed; top: 0; left: 0; width: 100%; }
-header { text-align: center; background-color: #FFF; border-bottom: 1px solid #DDD; }
+header { text-align: center; background-color: #FFF; border-bottom: 1px solid #EEE; }
 header img { height: 50px; }
 header a { box-sizing: border-box; display: inline-block; width: 25%; margin-bottom: 10px; text-decoration: none; color: #333; font-size: 15px; }
 header a { border-left: 1px solid #EEE; }
 header a:nth-child(1) { border-left: none; }
 header a.on { font-weight: bold; }
 
-main { box-sizing: border-box; padding-top: 84px; height: 100%; background-color: #EEE; }
+main { box-sizing: border-box; padding-top: 84px; min-height: 100%; background-color: #FFF; padding-bottom: 50px; }

@@ -1,7 +1,7 @@
 function Board() {
     return (
         <div>
-            자유게시판
+            게시판
         </div>
     );
 }
