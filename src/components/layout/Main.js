@@ -8,7 +8,7 @@ function Main() {
     return (
         <main>
             <Routes>
-                <Route path='/' element={<div>asd</div>} />
+                <Route path='/' element={<News />} />
                 <Route path='/news' element={<News />} />
                 <Route path='/book' element={<Book />} />
                 <Route path='/board' element={<Board />} />

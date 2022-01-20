@@ -1,7 +1,12 @@
+import BookCards from "./BookCards";
+
 function Book() {
     return (
-        <div>
-            책 리뷰
+        <div className="book">
+            <BookCards />
+            <BookCards />
+            <BookCards />
+            <BookCards />
         </div>
     );
 }
