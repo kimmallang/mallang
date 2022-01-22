@@ -10,7 +10,7 @@ function Card({ datetime, title, imageSrc, subTitle, description, starScore, com
             { subTitle && <div className="sub-title">{subTitle}</div> }
             { description && <div className="description">{description}</div> }
             {
-                starScore && (
+                (starScore || starScore === 0) ? (
                     <div className="stars">
                         <BsStarFill />
                         <BsStarFill />
@@ -19,7 +19,7 @@ function Card({ datetime, title, imageSrc, subTitle, description, starScore, com
                         <BsStar />
                         <span>3.5</span>
                     </div>
-                )
+                ) : null
             }
             {
                 (commentsCount || commentsCount === 0) ? (
