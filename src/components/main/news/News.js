@@ -1,5 +1,5 @@
-import NewsCard from "./NewsCard";
 import { useState } from "react";
+import Card from "../../common/card/Card";
 
 function News() {
     const [newsList] = useState([
@@ -49,10 +49,9 @@ function News() {
         <div className="news">
             {
                 newsList.map(({ pubDate, title, description }, index) => (
-                    <NewsCard key={index}
-                              pubDate={pubDate}
-                              title={title}
-                              description={description} />
+                    <Card datetime={pubDate}
+                          title={title}
+                          description={description} />
                 ))
             }
         </div>
