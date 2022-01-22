@@ -10,7 +10,7 @@ function Card({ datetime, title, imageSrc, subTitle, description, starScore, com
             { subTitle && <div className="sub-title">{subTitle}</div> }
             { description && <div className="description">{description}</div> }
             {
-                `${starScore}` && (
+                starScore && (
                     <div className="stars">
                         <BsStarFill />
                         <BsStarFill />
@@ -22,7 +22,7 @@ function Card({ datetime, title, imageSrc, subTitle, description, starScore, com
                 )
             }
             {
-                `${commentsCount}` ? (
+                (commentsCount || commentsCount === 0) ? (
                     <div className="comments">
                         <FaComment />
                         <span>{commentsCount.toLocaleString()}</span>
