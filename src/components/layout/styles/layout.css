@@ -13,3 +13,4 @@ header a:nth-child(1) { border-left: none; }
 header a.on { font-weight: bold; }
 
 main { box-sizing: border-box; padding-top: 84px; min-height: 100%; background-color: #FFF; padding-bottom: 50px; }
+main > div { padding-top: 10px; }
