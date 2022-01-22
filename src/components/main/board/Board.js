@@ -1,56 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../../common/card/Card";
+import BoardApi from "./BoardApi";
 
 function Board() {
-    const [boardList] = useState([
-        {
-            id: 1,
-            datetime: '2022-01-17 08:59:01',
-            title: '안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요.',
-            description: 'Hello My Name Is Dongju.',
-            commentsCount: 456,
-        },
-        {
-            id: 2,
-            datetime: '2022-01-17 08:59:01',
-            title: '안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요.',
-            description: 'Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju.',
-            commentsCount: 0,
-        },
-        {
-            id: 3,
-            datetime: '2022-01-17 08:59:01',
-            title: '안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요.',
-            description: 'Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju.Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju.Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju. Hello My Name Is Dongju.',
-            commentsCount: 1,
-        },
-        {
-            id: 4,
-            datetime: '2022-01-17 08:59:01',
-            title: '안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요.',
-            description: 'Hello My Name Is Dongju.',
-            commentsCount: 999,
-        },
-        {
-            id: 5,
-            datetime: '2022-01-17 08:59:01',
-            title: '안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요.',
-            description: '안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요.안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요.안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요.안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요.안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요.',
-            commentsCount: 1000,
-        },
-        {
-            id: 6,
-            datetime: '2022-01-17 08:59:01',
-            title: '안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요. 안녕하세요.',
-            description: 'Hello My Name Is Dongju.',
-            commentsCount: 1234,
-        },
-    ]);
+    const [boards, setBoards] = useState([]);
+
+    useEffect(() => {
+        BoardApi.getBoards()
+            .then((boards) => setBoards(boards))
+            .catch(e => console.log(e));
+    });
 
     return (
         <div className="board">
             {
-                boardList.map(({ datetime, title, description, commentsCount }, index) => (
+                boards.map(({ datetime, title, description, commentsCount }, index) => (
                     <Card datetime={datetime}
                           title={title}
                           description={description}
