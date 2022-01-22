@@ -14,11 +14,8 @@ function Study() {
     return (
         <div className="study">
             {
-                studies.map(({ datetime, title, description, commentsCount }, index) => (
-                    <Card datetime={datetime}
-                          title={title}
-                          description={description}
-                          commentsCount={commentsCount} />
+                studies.map((study, index) => (
+                    <Card key={index} {...study} />
                 ))
             }
         </div>

@@ -14,10 +14,8 @@ function News() {
     return (
         <div className="news">
             {
-                newsList.map(({ pubDate, title, description }, index) => (
-                    <Card datetime={pubDate}
-                          title={title}
-                          description={description} />
+                newsList.map((card, index) => (
+                    <Card key={index} {...card} />
                 ))
             }
         </div>

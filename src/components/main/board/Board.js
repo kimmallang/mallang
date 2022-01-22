@@ -14,11 +14,8 @@ function Board() {
     return (
         <div className="board">
             {
-                boards.map(({ datetime, title, description, commentsCount }, index) => (
-                    <Card datetime={datetime}
-                          title={title}
-                          description={description}
-                          commentsCount={commentsCount} />
+                boards.map((board, index) => (
+                    <Card key={index} {...board} />
                 ))
             }
         </div>
