@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "../../common/card/Card";
 import StudyApi from "./StudyApi";
+import LoadingPage from "../../common/pages/LoadingPage";
 
 function Study() {
     const [studies, setStudies] = useState([]);
@@ -13,6 +14,7 @@ function Study() {
 
     return (
         <div className="study">
+            { studies.length === 0 ? <LoadingPage /> : null}
             {
                 studies.map((study, index) => (
                     <Card key={index} {...study} />

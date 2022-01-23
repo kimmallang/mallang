@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "../../common/card/Card";
 import BoardApi from "./BoardApi";
+import LoadingPage from "../../common/pages/LoadingPage";
 
 function Board() {
     const [boards, setBoards] = useState([]);
@@ -13,6 +14,7 @@ function Board() {
 
     return (
         <div className="board">
+            { boards.length === 0 ? <LoadingPage /> : null}
             {
                 boards.map((board, index) => (
                     <Card key={index} {...board} />

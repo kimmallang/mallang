@@ -1,6 +1,7 @@
 import BookCards from "./BookCards";
 import BookApi from "./BookApi";
 import { useEffect, useState } from "react";
+import LoadingPage from "../../common/pages/LoadingPage";
 
 function Book() {
     const [bookTags, setBookTags] = useState([]);
@@ -13,6 +14,7 @@ function Book() {
 
     return (
         <div className="book">
+            { bookTags.length === 0 ? <LoadingPage /> : null}
             {
                 bookTags.map((bookTag, index) => (
                     <BookCards key={index} {...bookTag} />
