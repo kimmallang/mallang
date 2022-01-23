@@ -41,8 +41,8 @@ function BookCards({ name, books }) {
             <div className="category">{name}</div>
             <Slider {...sliderSettings}>
                 {
-                    books.map((book) => (
-                        <div className="book-card">
+                    books.map((book, index) => (
+                        <div key={index} className="book-card">
                             <Card {...book} />
                         </div>
                     ))
