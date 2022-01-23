@@ -3,6 +3,7 @@ import News from "../main/news/News";
 import Book from "../main/book/Book";
 import Board from "../main/board/Board";
 import Study from "../main/study/Study";
+import NotFoundPage from "../common/pages/NotFoundPage";
 
 function Main() {
     return (
@@ -13,6 +14,7 @@ function Main() {
                 <Route path='/book' element={<Book />} />
                 <Route path='/board' element={<Board />} />
                 <Route path='/study' element={<Study />} />
+                <Route path='*' element={<NotFoundPage />} />
             </Routes>
         </main>
     );
