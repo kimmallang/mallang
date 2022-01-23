@@ -25,6 +25,19 @@ function Card({ datetime, title, imageSrc, subTitle, description, starScore, com
         );
     };
 
+    const renderComments = () => {
+        if (!commentsCount && commentsCount !== 0) {
+            return;
+        }
+
+        return (
+            <div className={`comments ${commentsCount === 0 ? 'empty' : ''}`}>
+                <FaComment />
+                <span>{commentsCount.toLocaleString()}</span>
+            </div>
+        );
+    };
+
     return (
         <div className="card">
             { datetime && <div className="datetime">{datetime}</div> }
@@ -33,14 +46,7 @@ function Card({ datetime, title, imageSrc, subTitle, description, starScore, com
             { subTitle && <div className="sub-title">{subTitle}</div> }
             { description && <div className="description">{description}</div> }
             { renderStars(starScore) }
-            {
-                (commentsCount || commentsCount === 0) ? (
-                    <div className="comments">
-                        <FaComment />
-                        <span>{commentsCount.toLocaleString()}</span>
-                    </div>
-                ) : null
-            }
+            { renderComments(commentsCount) }
         </div>
     );
 }
