@@ -1,52 +1,21 @@
-import { FaComment } from "react-icons/fa";
-import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
+import CardCommentCount from "./components/CardCommentCount";
+import CardStars from "./components/CardStars";
+import CardDatetime from "./components/CardDatetime";
+import CardTitle from "./components/CardTitle";
+import CardImage from "./components/CardImage";
+import CardSubTitle from "./components/CardSubTitle";
+import CardDescription from "./components/CardDescription";
 
-function Card({ datetime, title, imageSrc, subTitle, description, starScore, commentsCount }) {
-    const renderStars = (starScore) => {
-        if (!starScore && starScore !== 0) {
-            return;
-        }
-
-        const fillStarCount = Math.floor(starScore);
-        const emptyStarCount = 5 - starScore;
-        const hasHalfStar = 5 !== (fillStarCount + emptyStarCount);
-
-        const fillStar = '*'.repeat(fillStarCount).split('').map((star, index) => <BsStarFill key={index} />);
-        const halfStar = hasHalfStar ? <BsStarHalf /> : null;
-        const emptyStar = '*'.repeat(emptyStarCount).split('').map((star, index) => <BsStar key={index} />);
-
-        return (
-            <div className="stars">
-                {fillStar}
-                {halfStar}
-                {emptyStar}
-                <span>{starScore}</span>
-            </div>
-        );
-    };
-
-    const renderComments = () => {
-        if (!commentsCount && commentsCount !== 0) {
-            return;
-        }
-
-        return (
-            <div className={`comments ${commentsCount === 0 ? 'empty' : ''}`}>
-                <FaComment />
-                <span>{commentsCount.toLocaleString()}</span>
-            </div>
-        );
-    };
-
+function Card({ datetime, title, imageUrl, subTitle, description, starScore, commentsCount }) {
     return (
         <div className="card">
-            { datetime && <div className="datetime">{datetime}</div> }
-            { title &&  <div className="title">{title}</div> }
-            { imageSrc && <div className="image"><img src={imageSrc} /></div>}
-            { subTitle && <div className="sub-title">{subTitle}</div> }
-            { description && <div className="description">{description}</div> }
-            { renderStars(starScore) }
-            { renderComments(commentsCount) }
+            <CardDatetime datetime={datetime} />
+            <CardTitle title={title} />
+            <CardImage src={imageUrl} alt={title} />
+            <CardSubTitle subTitle={subTitle} />
+            <CardDescription description={description} />
+            <CardStars starScore={starScore} />
+            <CardCommentCount commentsCount={commentsCount} />
         </div>
     );
 }

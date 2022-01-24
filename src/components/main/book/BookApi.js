@@ -2,7 +2,7 @@ const booksDummy = [
     {
         id: 1,
         title: '자바 ORM 표준 JPA 프로그래밍',
-        imageSrc: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
+        imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         subTitle: '윤준이 배밀기 시작했어요~!',
         description: '책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다.',
         starScore: 5,
@@ -11,7 +11,7 @@ const booksDummy = [
     {
         id: 2,
         title: '자바 ORM 표준 JPA 프로그래밍',
-        imageSrc: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
+        imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         subTitle: '윤준이 배밀기 시작했어요~!',
         description: '책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다.',
         starScore: 1.5,
@@ -20,7 +20,7 @@ const booksDummy = [
     {
         id: 3,
         title: '자바 ORM 표준 JPA 프로그래밍',
-        imageSrc: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
+        imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         subTitle: '윤준이 배밀기 시작했어요~!',
         description: '책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다.',
         starScore: 0,
@@ -29,7 +29,7 @@ const booksDummy = [
     {
         id: 4,
         title: '자바 ORM 표준 JPA 프로그래밍',
-        imageSrc: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
+        imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         subTitle: '윤준이 배밀기 시작했어요~!',
         description: '책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다.',
         starScore: 3.5,
@@ -38,7 +38,7 @@ const booksDummy = [
     {
         id: 5,
         title: '자바 ORM 표준 JPA 프로그래밍',
-        imageSrc: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
+        imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         subTitle: '윤준이 배밀기 시작했어요~!',
         description: '책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다.',
         starScore: 3.5,
@@ -47,7 +47,7 @@ const booksDummy = [
     {
         id: 6,
         title: '자바 ORM 표준 JPA 프로그래밍',
-        imageSrc: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
+        imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         subTitle: '윤준이 배밀기 시작했어요~!',
         description: '책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다.',
         starScore: 3.5,
@@ -56,7 +56,7 @@ const booksDummy = [
     {
         id: 7,
         title: '자바 ORM 표준 JPA 프로그래밍',
-        imageSrc: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
+        imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         subTitle: '윤준이 배밀기 시작했어요~!',
         description: '책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다.',
         starScore: 3.5,
@@ -65,7 +65,7 @@ const booksDummy = [
     {
         id: 8,
         title: '자바 ORM 표준 JPA 프로그래밍',
-        imageSrc: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
+        imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         subTitle: '윤준이 배밀기 시작했어요~!',
         description: '책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다.',
         starScore: 3.5,
@@ -74,7 +74,7 @@ const booksDummy = [
     {
         id: 9,
         title: '자바 ORM 표준 JPA 프로그래밍',
-        imageSrc: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
+        imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         subTitle: '윤준이 배밀기 시작했어요~!',
         description: '책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다. 책이 재미가 있어서 재미가 있는데 재미가 있다.',
         starScore: 3.5,
