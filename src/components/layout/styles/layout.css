@@ -6,11 +6,19 @@ header > div, main { max-width: 1280px; min-width: 350px; margin: 0 auto; }
 
 header { position: fixed; top: 0; left: 0; width: 100%; z-index: 10; }
 header { text-align: center; background-color: #FFF; border-bottom: 1px solid #EEE; }
-header img { height: 50px; }
-header a { box-sizing: border-box; display: inline-block; width: 25%; margin-bottom: 10px; text-decoration: none; color: #333; font-size: 15px; }
-header a { border-left: 1px solid #EEE; }
-header a:nth-child(1) { border-left: none; }
-header a.on { font-weight: bold; }
+header .top-logo img { height: 50px; }
+header .menus a { box-sizing: border-box; display: inline-block; width: 25%; margin-bottom: 10px; text-decoration: none; color: #333; font-size: 15px; }
+header .menus a { border-left: 1px solid #EEE; }
+header .menus a:nth-child(1) { border-left: none; }
+header .menus a.on { font-weight: bold; }
+header .menu-icon { position: absolute; left: 0; top: 0; }
+header .menu-icon { display: inline-block; width: 84px; height: 84px; font-size: 36px; color: #3182f6; }
+header .menu-icon > svg { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); cursor: pointer; }
+
 
 main { box-sizing: border-box; padding-top: 84px; min-height: 100%; background-color: #FFF; padding-bottom: 50px; }
 main > div { padding-top: 10px; }
+
+@media screen and (max-width:1280px) {
+    header .menu-icon { display: inline-block; width: 53px; height: 53px; font-size: 36px; color: #3182f6; }
+}
