@@ -1,8 +1,8 @@
 import { CgMenuGridR } from "react-icons/cg";
 
-function MenuIcon() {
+function MenuIcon({ onClick }) {
     return (
-        <div className='menu-icon'>
+        <div className='menu-icon' onClick={onClick}>
             <CgMenuGridR />
         </div>
     );
