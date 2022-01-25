@@ -11,9 +11,9 @@ header .menus a { box-sizing: border-box; display: inline-block; width: 25%; mar
 header .menus a { border-left: 1px solid #EEE; }
 header .menus a:nth-child(1) { border-left: none; }
 header .menus a.on { font-weight: bold; }
-header .menu-icon { position: absolute; left: 0; top: 0; z-index: 30; }
-header .menu-icon { display: inline-block; width: 84px; height: 84px; font-size: 36px; color: #3182f6; }
-header .menu-icon > svg { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); cursor: pointer; }
+header .sidebar-icon { position: absolute; left: 0; top: 0; z-index: 30; }
+header .sidebar-icon { display: inline-block; width: 84px; height: 84px; font-size: 36px; color: #3182f6; }
+header .sidebar-icon > svg { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); cursor: pointer; }
 header .sidebar { position: fixed; top: 0; left: 0; height: 100%; background-color: #FFF; text-align: center; }
 header .sidebar { display: inline-block; width: 0; overflow: hidden; transition: width ease 0.4s; }
 header .sidebar.on { width: 400px; border-right: 1px solid #EEE; }
@@ -37,7 +37,7 @@ main { box-sizing: border-box; padding-top: 84px; min-height: 100%; background-c
 main > div { padding-top: 10px; }
 
 @media screen and (max-width:1280px) {
-    header .menu-icon { width: 53px; height: 53px; }
+    header .sidebar-icon { width: 53px; height: 53px; }
 }
 
 @media screen and (max-width:768px) {

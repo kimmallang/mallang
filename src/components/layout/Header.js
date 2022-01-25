@@ -1,6 +1,6 @@
 import TopLogo from "./header/components/TopLogo";
 import Menus from "./header/Menus";
-import MenuIcon from "./header/MenuIcon";
+import SidebarIcon from "./header/SidebarIcon";
 import Sidebar from "./header/Sidebar";
 import { useState } from "react";
 
@@ -10,7 +10,7 @@ function Header() {
     return (
         <header>
             <div className="top-menu-wrapper">
-                <MenuIcon onClick={() => setOpenSidebar(!openSidebar)} />
+                <SidebarIcon onClick={() => setOpenSidebar(!openSidebar)} />
                 <TopLogo />
                 <Menus />
             </div>
