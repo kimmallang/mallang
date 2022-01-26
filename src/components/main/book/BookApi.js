@@ -4,20 +4,23 @@ const booksDummy = [
         title: '자바 ORM 표준 JPA 프로그래밍',
         imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         starScore: 5,
+        starCount: 25,
         commentsCount: 456,
     },
     {
         id: 2,
         title: '자바 ORM 표준 JPA 프로그래밍',
         imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
-        starScore: 1.5,
-        commentsCount: 456,
+        starScore: 0,
+        starCount: 0,
+        commentsCount: 0,
     },
     {
         id: 3,
         title: '자바 ORM 표준 JPA 프로그래밍',
         imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
-        starScore: 0,
+        starScore: 4,
+        starCount: 123456,
         commentsCount: 456,
     },
     {
@@ -25,6 +28,7 @@ const booksDummy = [
         title: '자바 ORM 표준 JPA 프로그래밍',
         imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         starScore: 3.5,
+        starCount: 123,
         commentsCount: 456,
     },
     {
@@ -32,6 +36,7 @@ const booksDummy = [
         title: '자바 ORM 표준 JPA 프로그래밍',
         imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         starScore: 3.5,
+        starCount: 123,
         commentsCount: 456,
     },
     {
@@ -39,6 +44,7 @@ const booksDummy = [
         title: '자바 ORM 표준 JPA 프로그래밍',
         imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         starScore: 3.5,
+        starCount: 123,
         commentsCount: 456,
     },
     {
@@ -46,6 +52,7 @@ const booksDummy = [
         title: '자바 ORM 표준 JPA 프로그래밍',
         imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         starScore: 3.5,
+        starCount: 123,
         commentsCount: 456,
     },
     {
@@ -53,6 +60,7 @@ const booksDummy = [
         title: '자바 ORM 표준 JPA 프로그래밍',
         imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         starScore: 3.5,
+        starCount: 123,
         commentsCount: 456,
     },
     {
@@ -60,6 +68,7 @@ const booksDummy = [
         title: '자바 ORM 표준 JPA 프로그래밍',
         imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         starScore: 3.5,
+        starCount: 123,
         commentsCount: 456,
     },
 ];

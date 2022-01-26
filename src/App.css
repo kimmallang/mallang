@@ -11,6 +11,7 @@
 .card .stars { position: relative; color: #3182f6; text-align: center; }
 .card .stars > svg { font-size: 20px; margin: 20px 2px 10px 2px; }
 .card .stars > span { position: absolute; bottom: 11px; font-size: 14px; margin-left: 5px; }
+.card .stars > span > span { font-size: 12px; color: #AAA; }
 .card .comments { color: #3182f6; text-align: right; margin: 10px 20px 20px 20px; }
 .card .comments.empty { color: #CCC; }
 .card .comments > svg { font-size: 18px; }
