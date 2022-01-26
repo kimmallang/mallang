@@ -30,7 +30,6 @@ header .sidebar > div.theme .buttons button:nth-child(1) { border-top-right-radi
 header .sidebar > div.theme .buttons button:nth-child(2) { border-top-left-radius: 0; border-bottom-left-radius: 0; }
 header .sidebar > div.theme .buttons button:nth-child(1).on { border-right: none; }
 header .sidebar > div.theme .buttons button:nth-child(2).on { border-left: none; }
-header .sidebar button { background: none; border: 1px solid #888; border-radius: 3px; color: #555; cursor: pointer; }
 header .sidebar button.on { border-color: #3182f6; background-color: #3182f6; color: #FFF; }
 
 main { box-sizing: border-box; padding-top: 84px; min-height: 100%; background-color: #FFF; padding-bottom: 50px; }
@@ -52,5 +51,4 @@ body.dark main { background-color: #222; }
 body.dark header .menus a { color: #EEE; }
 body.dark header .sidebar > div.close { color: #EEE; }
 body.dark header .sidebar button { color: #EEE; }
-
 

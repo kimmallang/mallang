@@ -19,17 +19,19 @@
 
 .news .card .title { font-size: 18px; font-weight: 500; margin: 20px 20px 0 20px; }
 
-.book .card { box-sizing: border-box; display: inline-block; margin: 10px 20px 0 20px; width: 90%; }
+.book .card { box-sizing: border-box; display: inline-block; margin: 10px 20px 0 20px; width: 90%; cursor: pointer; }
+.book .book-cards { position: relative; }
+.book .book-cards .arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; }
 .book .book-cards .book-card { display: inline-block; }
 .book .book-cards .category { margin: 40px 20px 0 20px; font-size: 15px; color: #888; }
+.book .add-book { position: fixed; top: 83px; left: 50%; transform: translateX(-50%); z-index: 9; }
+.book .add-book { box-sizing: border-box; width: 100%; text-align: center; padding-top: 10px; max-width: 1280px; min-width: 350px; }
+.book .add-book button { background-color: #FFF; color: #3182f6; border-color: #3182f6; }
 
 .arrow { position: relative; display: inline-block; width: 50px; height: 50px; border-radius: 100%; background: none; color: #DDD; cursor: pointer; }
 .arrow > svg { position: absolute; display: inline-block; width: 25px; height: 25px; }
 .arrow-left > svg { top: 50%; left: 40%; transform: translate(-40%, -50%); }
 .arrow-right > svg { top: 50%; left: 60%; transform: translate(-60%, -50%); }
-
-.book .book-cards { position: relative; }
-.book .book-cards .arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; }
 
 /* PC */
 .book .book-cards .arrow-left { left: -40px; }
@@ -41,5 +43,10 @@
     .book .book-cards .arrow { position: absolute; top: 45%; z-index: 5; }
 }
 
+/* buttons */
+button { background: none; border: 1px solid #888; border-radius: 3px; color: #555; cursor: pointer; padding: 6px 12px; font-size: 14px; }
+
 /* dark mode */
 body.dark .card { background-color: #222; box-shadow: none; }
+body.dark button { color: #EEE; }
+body.dark .book .add-book button { background-color: #222; }

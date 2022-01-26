@@ -1,7 +1,7 @@
 import Slider from "react-slick";
-import ArrowRight from "../../common/buttons/ArrowRight";
-import ArrowLeft from "../../common/buttons/ArrowLeft";
-import Card from "../../common/card/Card";
+import ArrowRight from "../../../common/buttons/ArrowRight";
+import ArrowLeft from "../../../common/buttons/ArrowLeft";
+import Card from "../../../common/card/Card";
 
 function BookCards({ name, books }) {
     const sliderSettings = {
