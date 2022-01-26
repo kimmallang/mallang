@@ -1,4 +1,4 @@
-.card { border: 1px solid #EEE; background-color: #FFF; margin: 10px; border-radius: 10px; cursor: pointer; }
+.card { border: 1px solid #EEE; background-color: #FFF; margin: 10px; border-radius: 7px; cursor: pointer; }
 .card { box-shadow: 1px 1px 4px 1px #EEE; }
 .card .datetime { font-size: 14px; color: #999; text-align: right; margin: 20px 20px 0 0; }
 .card .title { font-size: 16px; margin: 20px; max-height: 30px; overflow: hidden; }
@@ -39,3 +39,6 @@
     .book .book-cards .arrow-right { right: 40px; }
     .book .book-cards .arrow { position: absolute; top: 30%; z-index: 5; }
 }
+
+/* dark mode */
+body.dark .card { background-color: #222; box-shadow: none; }
