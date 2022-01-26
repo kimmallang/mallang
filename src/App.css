@@ -18,9 +18,9 @@
 
 .news .card .title { font-size: 18px; font-weight: 500; margin: 20px 20px 0 20px; }
 
-.book .card { box-sizing: border-box; display: inline-block; margin: 10px 20px 0 20px; }
+.book .card { box-sizing: border-box; display: inline-block; margin: 10px 20px 0 20px; width: 90%; }
 .book .book-cards .book-card { display: inline-block; }
-.book .book-cards .category { margin: 40px 20px 0px 20px; font-size: 15px; color: #888; }
+.book .book-cards .category { margin: 40px 20px 0 20px; font-size: 15px; color: #888; }
 
 .arrow { position: relative; display: inline-block; width: 50px; height: 50px; border-radius: 100%; background: none; color: #DDD; cursor: pointer; }
 .arrow > svg { position: absolute; display: inline-block; width: 25px; height: 25px; }
@@ -37,7 +37,7 @@
     /* mobile, tablet */
     .book .book-cards .arrow-left { left: 40px; }
     .book .book-cards .arrow-right { right: 40px; }
-    .book .book-cards .arrow { position: absolute; top: 30%; z-index: 5; }
+    .book .book-cards .arrow { position: absolute; top: 45%; z-index: 5; }
 }
 
 /* dark mode */
