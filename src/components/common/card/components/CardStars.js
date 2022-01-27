@@ -1,7 +1,11 @@
 import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
 
-function CardStars({ starScore }) {
+function CardStars({ starScore, starCount }) {
     if (!starScore && starScore !== 0) {
+        return null;
+    }
+
+    if (!starCount && starCount !== 0) {
         return null;
     }
 
@@ -18,7 +22,10 @@ function CardStars({ starScore }) {
             {fillStar}
             {halfStar}
             {emptyStar}
-            <span>{starScore}</span>
+            <span>
+                {starScore}
+                <span>({starCount.toLocaleString()})</span>
+            </span>
         </div>
     );
 }
