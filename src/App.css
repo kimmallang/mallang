@@ -23,7 +23,11 @@
 .book .book-cards { position: relative; }
 .book .book-cards .arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; }
 .book .book-cards .book-card { display: inline-block; }
-.book .book-cards .category { margin: 40px 20px 0 20px; font-size: 15px; color: #888; }
+.book .book-cards .category { margin: 40px 20px 0 20px; }
+.book .book-cards .category > div { display: inline-block; width: 50%; }
+.book .book-cards .category > div.name { font-size: 15px; color: #888; }
+.book .book-cards .category > div.more { text-align: right; }
+.book .book-cards .category > div.more span { font-size: 15px; color: #888; cursor: pointer; }
 .book .add-book { position: fixed; top: 83px; left: 50%; transform: translateX(-50%); z-index: 9; }
 .book .add-book { box-sizing: border-box; width: 100%; text-align: center; padding-top: 10px; max-width: 1280px; min-width: 350px; }
 .book .add-book button { background-color: #FFF; color: #3182f6; border-color: #3182f6; }

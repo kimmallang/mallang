@@ -2,6 +2,7 @@ import Slider from "react-slick";
 import ArrowRight from "../../../common/buttons/ArrowRight";
 import ArrowLeft from "../../../common/buttons/ArrowLeft";
 import Card from "../../../common/card/Card";
+import { BiChevronDown } from "react-icons/bi";
 
 function BookCards({ name, books }) {
     const sliderSettings = {
@@ -38,7 +39,14 @@ function BookCards({ name, books }) {
 
     return (
         <div className="book-cards">
-            <div className="category">{name}</div>
+            <div className="category">
+                <div className="name">
+                    <span>{name}</span>
+                </div>
+                <div className="more">
+                    <span>더보기<BiChevronDown /></span>
+                </div>
+            </div>
             <Slider {...sliderSettings}>
                 {
                     books.map((book, index) => (
