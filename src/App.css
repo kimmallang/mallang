@@ -18,19 +18,50 @@
 .card .comments > span { font-size: 14px; margin-left: 5px; }
 
 .news .card .title { font-size: 18px; font-weight: 500; margin: 20px 20px 0 20px; }
+.news .card .description { margin-bottom: 20px; }
 
 .book-card-slides .card { box-sizing: border-box; display: inline-block; margin: 10px 20px 0 20px; width: 90%; cursor: pointer; }
 .book-card-slides .book-cards { position: relative; }
 .book-card-slides .book-cards .arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; }
 .book-card-slides .book-cards .book-card { display: inline-block; }
-.book-card-slides .book-cards .category { margin: 40px 20px 0 20px; }
-.book-card-slides .book-cards .category > div { display: inline-block; width: 50%; }
-.book-card-slides .book-cards .category > div.name { font-size: 15px; color: #888; }
-.book-card-slides .book-cards .category > div.more { text-align: right; }
-.book-card-slides .book-cards .category > div.more a { font-size: 15px; color: #888; text-decoration: none; }
-.book-card-slides .add-book { position: fixed; top: 83px; left: 50%; transform: translateX(-50%); z-index: 9; }
-.book-card-slides .add-book { box-sizing: border-box; width: 100%; text-align: center; padding-top: 10px; max-width: 1280px; min-width: 350px; }
-.book-card-slides .add-book button { background-color: #FFF; color: #3182f6; border-color: #3182f6; }
+
+.book-list .book { position: relative; height: 182px; }
+.book-list .book { border: 1px solid #EEE; background-color: #FFF; margin: 10px; border-radius: 7px; cursor: pointer; }
+.book-list .book { box-shadow: 1px 1px 4px 1px #EEE; }
+.book-list .book .image { position: absolute; top: 50%; left: 20px; transform: translateY(-50%); width: 100px; }
+.book-list .book .image img { width: 100%; max-height: 142px; }
+.book-list .book > div:not(.image) { box-sizing: border-box; padding: 0 20px 0 140px; }
+.book-list .book .title { font-size: 16px; margin-top: 20px; max-height: 30px; overflow: hidden; }
+.book-list .book .title { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; }
+.book-list .book .published { height: 60px; color: #AAA; font-size: 14px; }
+.book-list .book .published span { display: inline-block; padding-top: 2px; }
+.book-list .book .published span:first-child { padding-left: 0; padding-top: 4px; }
+.book-list .book .stars { position: relative; color: #3182f6; text-align: left; }
+.book-list .book .stars > svg { font-size: 20px; margin: 10px 2px 10px 2px; }
+.book-list .book .stars > svg:first-child { margin-left: 0; }
+.book-list .book .stars > span { position: absolute; bottom: 11px; font-size: 14px; margin-left: 5px; }
+.book-list .book .stars > span > span { font-size: 12px; color: #AAA; }
+.book-list .book .description { font-size: 14px; margin: 10px 20px; height: 51px; overflow: hidden; }
+.book-list .book .description { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+.book-list .book .comments { color: #3182f6; text-align: right; margin-top: 0; }
+.book-list .book .comments.empty { color: #CCC; }
+.book-list .book .comments > svg { font-size: 18px; }
+.book-list .book .comments > span { font-size: 14px; margin-left: 5px; }
+
+.book-list .tag,
+.book-card-slides .book-cards .tag { margin: 40px 20px 0 20px; }
+.book-list .tag > div,
+.book-card-slides .book-cards .tag > div { display: inline-block; width: 50%; }
+.book-list .tag > div.name,
+.book-card-slides .book-cards .tag > div.name { font-size: 15px; color: #888; }
+.book-list .tag > div.more,
+.book-card-slides .book-cards .tag > div.more { text-align: right; }
+.book-list .tag > div.more a,
+.book-card-slides .book-cards .tag > div.more a { font-size: 15px; color: #888; text-decoration: none; }
+
+.book-card-slides .add-book, .book-list .add-book { position: fixed; top: 83px; left: 50%; transform: translateX(-50%); z-index: 9; }
+.book-card-slides .add-book, .book-list .add-book { box-sizing: border-box; width: 100%; text-align: center; padding-top: 10px; max-width: 1280px; min-width: 350px; }
+.book-card-slides .add-book button, .book-list .add-book button { background-color: #FFF; color: #3182f6; border-color: #3182f6; }
 
 .arrow { position: relative; display: inline-block; width: 50px; height: 50px; border-radius: 100%; background: none; color: #DDD; cursor: pointer; }
 .arrow > svg { position: absolute; display: inline-block; width: 25px; height: 25px; }
@@ -53,4 +84,6 @@ button { background: none; border: 1px solid #888; border-radius: 3px; color: #5
 /* dark mode */
 body.dark .card { background-color: #222; box-shadow: none; }
 body.dark button { color: #EEE; }
-body.dark .book-card-slides .add-book button { background-color: #222; }
+body.dark .book-card-slides .add-book button,
+body.dark .book-list .add-book button { background-color: #222; }
+body.dark .book { background-color: #222; box-shadow: none; }

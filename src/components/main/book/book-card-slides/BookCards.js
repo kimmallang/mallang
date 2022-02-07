@@ -39,7 +39,7 @@ function BookCards({ name, tag, books }) {
 
     return (
         <div className="book-cards">
-            <div className="category">
+            <div className="tag">
                 <div className="name">
                     <span>{name}</span>
                 </div>
