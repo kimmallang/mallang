@@ -2,8 +2,9 @@ import Slider from "react-slick";
 import ArrowRight from "../../../common/buttons/ArrowRight";
 import ArrowLeft from "../../../common/buttons/ArrowLeft";
 import Card from "../../../common/card/Card";
+import { Link } from "react-router-dom";
 
-function BookCards({ name, books }) {
+function BookCards({ name, tag, books }) {
     const sliderSettings = {
         infinite: false,
         speed: 300,
@@ -38,7 +39,14 @@ function BookCards({ name, books }) {
 
     return (
         <div className="book-cards">
-            <div className="category">{name}</div>
+            <div className="tag">
+                <div className="name">
+                    <span>{name}</span>
+                </div>
+                <div className="more">
+                    <Link to={`/book/${tag}`}>더보기</Link>
+                </div>
+            </div>
             <Slider {...sliderSettings}>
                 {
                     books.map((book, index) => (
