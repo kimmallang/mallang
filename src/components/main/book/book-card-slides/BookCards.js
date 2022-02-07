@@ -2,9 +2,9 @@ import Slider from "react-slick";
 import ArrowRight from "../../../common/buttons/ArrowRight";
 import ArrowLeft from "../../../common/buttons/ArrowLeft";
 import Card from "../../../common/card/Card";
-import { BiChevronDown } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
-function BookCards({ name, books }) {
+function BookCards({ name, tag, books }) {
     const sliderSettings = {
         infinite: false,
         speed: 300,
@@ -44,7 +44,7 @@ function BookCards({ name, books }) {
                     <span>{name}</span>
                 </div>
                 <div className="more">
-                    <span>더보기<BiChevronDown /></span>
+                    <Link to={`/book/${tag}`}>더보기</Link>
                 </div>
             </div>
             <Slider {...sliderSettings}>

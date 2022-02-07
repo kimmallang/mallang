@@ -1,10 +1,10 @@
-import BookApi from "./BookApi";
+import BookApi from "../BookApi";
 import { useEffect, useState } from "react";
-import LoadingPage from "../../common/pages/LoadingPage";
-import BookTags from "./components/BookTags";
-import AddBookButton from "./components/AddBookButton";
+import LoadingPage from "../../../common/pages/LoadingPage";
+import BookTags from "./BookTags";
+import AddBookButton from "../components/AddBookButton";
 
-function Book() {
+function BookCardSlides() {
     const [bookTags, setBookTags] = useState([]);
 
     useEffect(() => {
@@ -14,7 +14,7 @@ function Book() {
     });
 
     return (
-        <div className="book">
+        <div className="book-card-slides">
             { bookTags.length === 0 ? <LoadingPage /> : null}
             <AddBookButton />
             <BookTags bookTags={bookTags} />
@@ -22,4 +22,4 @@ function Book() {
     );
 }
 
-export default Book;
+export default BookCardSlides;

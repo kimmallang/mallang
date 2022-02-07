@@ -76,21 +76,25 @@ const booksDummy = [
 const bookTagsDummy = [
     {
         id: 1,
-        name: '프론트',
+        tag: 'front-end',
+        name: '프론트엔드',
         books: booksDummy,
     },
     {
         id: 2,
+        tag: 'back-end',
         name: '백엔드',
         books: booksDummy,
     },
     {
         id: 3,
+        tag: 'dev-ops',
         name: '데브옵스',
         books: booksDummy,
     },
     {
         id: 4,
+        tag: 'database',
         name: '데이터베이스',
         books: booksDummy,
     },
