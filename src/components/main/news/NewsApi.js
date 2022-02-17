@@ -10,7 +10,7 @@ const newsListDummy = [
 
 const NewsApi = {
     getNewsList: () => {
-        return axios.get('/mallang/news?query=IT&page=1')
+        return axios.get('https://bobby-djk.herokuapp.com/mallang/news?query=IT&page=1')
             .then((resp) => {
                 console.log(resp);
                 return resp.data.data.items;
