@@ -11,7 +11,10 @@ const newsListDummy = [
 const NewsApi = {
     getNewsList: () => {
         return axios.get('/mallang/news?query=IT&page=1')
-            .then((resp) => resp.data.data.items);
+            .then((resp) => {
+                console.log(resp);
+                return resp.data.data.items;
+            });
     },
 }
 
