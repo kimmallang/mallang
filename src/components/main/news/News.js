@@ -10,7 +10,7 @@ function News() {
         NewsApi.getNewsList()
             .then((newsList) => setNewsList(newsList))
             .catch(e => console.log(e));
-    });
+    }, []);
 
     return (
         <div className="news">
