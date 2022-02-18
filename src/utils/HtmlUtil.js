@@ -1,7 +1,5 @@
 const HtmlUtil = {
-    'getBodyClassName': () => {
-        return window.document.body.className;
-    },
+    'getBodyClassName': () => window.document.body.className,
 
     'addBodyClassName': (className) => {
         if (HtmlUtil.hasBodyClassName(className)) {
@@ -30,12 +28,10 @@ const HtmlUtil = {
         window.document.body.className = bodyClassName.replace(` ${className}`, '');
     },
 
-    'hasBodyClassName': (className) => {
-        return window.document.body.className.includes(className);
-    },
+    'hasBodyClassName': (className) => window.document.body.className.includes(className),
 
-    'textToHtml': (htmlText) => {
-        return htmlText.replace(/<(\/)?([a-zA-Z]*)(\s[a-zA-Z]*=[^>]*)?(\s)*(\/)?>/ig, '') // html 태그 제거
+    'textToHtml': (htmlText) => (
+        htmlText.replace(/<(\/)?([a-zA-Z]*)(\s[a-zA-Z]*=[^>]*)?(\s)*(\/)?>/ig, '') // html 태그 제거
             .replace(/&nbsp;/gi,' ')
             .replace(/&quot;/gi,'"')
             .replace(/&amp;/gi,'&')
@@ -49,8 +45,8 @@ const HtmlUtil = {
             .replace(/&rdquo;/gi,'”')
             .replace(/&bdquo;/gi,'„')
             .replace(/&permil;/gi,'‰')
-            .replace(/&euro;/gi,'€');
-    },
+            .replace(/&euro;/gi,'€')
+        ),
 };
 
 export default HtmlUtil;
