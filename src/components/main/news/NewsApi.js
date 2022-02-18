@@ -1,15 +1,15 @@
-import HtmlUtil from "../../../utils/HtmlUtil";
 import BobbyApi from "../../common/api/BobbyApi";
 import WebUtil from "../../../utils/WebUtil";
+import StringUtil from "../../../utils/StringUtil";
 
 const NewsApi = {
-    getNewsList: () => {
-        return BobbyApi.get('/news', { query: 'IT', page: 1 })
+    getNewsList: ({ query, page }) => {
+        return BobbyApi.get('/news', { query, page })
             .then(data => {
                 data.items
                     .forEach(item => {
-                        item.title = HtmlUtil.textToHtml(item.title);
-                        item.description = HtmlUtil.textToHtml(item.description);
+                        item.title = StringUtil.textToHtml(item.title);
+                        item.description = StringUtil.textToHtml(item.description);
                     });
 
                 return data.items;

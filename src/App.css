@@ -78,6 +78,13 @@
     .book-card-slides .book-cards .arrow { position: absolute; top: 45%; z-index: 5; }
 }
 
+.news { padding-top: 90px; }
+.news .tags { position: fixed; top: 84px; background-color: #FFF; left: 0; width: 100%; padding: 24px 0; text-align: center; overflow: auto; background-color: #EEE; }
+.news .tags > div { display: inline-block; width: 800px; }
+.news .tags button { margin-left: 10px; background-color: #FFF; border: none; padding: 10px 20px; }
+.news .tags button:nth-child(1) { margin-left: 0; }
+.news .tags button.on { background-color: #3182f6; color: #FFF;border-color: #3182f6; }
+
 /* buttons */
 button { background: none; border: 1px solid #888; border-radius: 3px; color: #555; cursor: pointer; padding: 6px 12px; font-size: 14px; }
 
@@ -87,3 +94,6 @@ body.dark button { color: #EEE; }
 body.dark .book-card-slides .add-book button,
 body.dark .book-list .add-book button { background-color: #222; }
 body.dark .book { background-color: #222; box-shadow: none; }
+body.dark .news .tags { background-color: #222; }
+body.dark .news .tags button { background-color: #333; }
+body.dark .news .tags button.on { background-color: #3182f6; color: #FFF; border-color: #3182f6; }
