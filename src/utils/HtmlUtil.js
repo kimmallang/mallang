@@ -1,9 +1,7 @@
 const HtmlUtil = {
-    'getBodyClassName': () => {
-        return window.document.body.className;
-    },
+    getBodyClassName: () => window.document.body.className,
 
-    'addBodyClassName': (className) => {
+    addBodyClassName: (className) => {
         if (HtmlUtil.hasBodyClassName(className)) {
             return;
         }
@@ -16,7 +14,7 @@ const HtmlUtil = {
         window.document.body.className += ` ${className}`;
     },
 
-    'removeBodyClassName': (className) => {
+    removeBodyClassName: (className) => {
         if (!HtmlUtil.hasBodyClassName(className)) {
             return;
         }
@@ -30,9 +28,7 @@ const HtmlUtil = {
         window.document.body.className = bodyClassName.replace(` ${className}`, '');
     },
 
-    'hasBodyClassName': (className) => {
-        return window.document.body.className.includes(className);
-    },
+    hasBodyClassName: (className) => window.document.body.className.includes(className),
 };
 
 export default HtmlUtil;
