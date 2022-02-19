@@ -4,10 +4,13 @@ import NewsApi from "./NewsApi";
 import LoadingPage from "../../common/pages/LoadingPage";
 import NewsTags from "./components/NewsTags";
 import ScrollUtil from "../../../utils/ScrollUtil";
+import { useInView } from "react-intersection-observer";
 
 function News() {
     const [isLoading, setIsLoading] = useState(true);
     const [newsList, setNewsList] = useState([]);
+    const [page, setPage] = useState(1);
+    const [isLast, setIsLast] = useState(false);
     const [newsTags, setNewsTags] = useState([
         { tag: 'IT', tagName: 'IT', isOn: true },
         { tag: 'DUNAMU', tagName: '두나무', isOn: false },
@@ -20,9 +23,25 @@ function News() {
         { tag: 'TOSS', tagName: '토스', isOn: false },
     ]);
 
+    const [ref, inView] = useInView();
+
     useEffect(() => {
-        getNewsList();
+        getNewsListMore();
     }, []);
+
+    useEffect(() => {
+        if (inView) {
+            loadMore();
+        }
+    }, [inView])
+
+    const loadMore = () => {
+        if (isLoading || isLast) {
+            return;
+        }
+
+        getNewsListMore();
+    };
 
     const handleTagClick = (tag) => {
         ScrollUtil.goTop();
@@ -38,20 +57,49 @@ function News() {
 
         const tag = newsTags.find(({ isOn }) => isOn).tag;
         NewsApi.getNewsList({ query: tag, page: 1 })
-            .then((newsList) => {
-                setNewsList(newsList);
+            .then(({ page, isLast, items }) => {
+                setNewsList([...items]);
                 setIsLoading(false);
+                setPage(page + 1);
+                setIsLast(isLast);
             });
     }
+
+    const getNewsListMore = () => {
+        setIsLoading(true);
+
+        const tag = newsTags.find(({ isOn }) => isOn).tag;
+        NewsApi.getNewsList({ query: tag, page })
+            .then(({ page, isLast, items }) => {
+                setNewsList([...newsList, ...items]);
+                setIsLoading(false);
+                setPage(page + 1);
+                setIsLast(isLast);
+            });
+    }
+
+    const renderNewsCard = (key, card, isPagingRef) => {
+        if (isPagingRef) {
+            return (
+                <div key={key} onClick={() => window.open(card.naverLink)} ref={ref}>
+                    <Card {...card} />
+                </div>
+            );
+        }
+
+        return (
+            <div key={key} onClick={() => window.open(card.naverLink)}>
+                <Card {...card} />
+            </div>
+        );
+    };
 
     return (
         <div className="news">
             {isLoading ? <LoadingPage /> : null}
             <NewsTags newsTags={newsTags} onClick={handleTagClick} />
             {
-                newsList.map((card, index) => (
-                    <Card key={index} {...card} />
-                ))
+                newsList.map((card, index) => renderNewsCard(index, card, index === (newsList.length - 4)))
             }
         </div>
     );

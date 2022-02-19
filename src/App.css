@@ -79,7 +79,7 @@
 }
 
 .news { padding-top: 90px; }
-.news .tags { position: fixed; top: 84px; background-color: #FFF; left: 0; width: 100%; padding: 24px 0; text-align: center; overflow: auto; background-color: #EEE; }
+.news .tags { position: fixed; top: 83px; background-color: #FFF; left: 0; width: 100%; padding: 24px 0; text-align: center; overflow: auto; background-color: #EEE; }
 .news .tags > div { display: inline-block; width: 800px; }
 .news .tags button { margin-left: 10px; background-color: #FFF; border: none; padding: 10px 20px; }
 .news .tags button:nth-child(1) { margin-left: 0; }

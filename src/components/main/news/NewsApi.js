@@ -12,7 +12,7 @@ const NewsApi = {
                         item.description = StringUtil.textToHtml(item.description);
                     });
 
-                return data.items;
+                return {...data};
             })
             .catch(() => WebUtil.redirectToErrorPage());
     },
