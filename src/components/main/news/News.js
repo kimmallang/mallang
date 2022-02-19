@@ -49,9 +49,11 @@ function News() {
             {isLoading ? <LoadingPage /> : null}
             <NewsTags newsTags={newsTags} onClick={handleTagClick} />
             {
-                newsList.map((card, index) => (
-                    <Card key={index} {...card} />
-                ))
+                newsList.map((card, index) =>
+                    <div key={index} onClick={() => window.open(card.naverLink)}>
+                        <Card {...card} />
+                    </div>
+                )
             }
         </div>
     );
