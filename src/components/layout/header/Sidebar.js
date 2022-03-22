@@ -35,6 +35,9 @@ function Sidebar({ isOpen, onClick }) {
         Cookie.removeCookie('dark');
     };
 
+    const kakaoLoginButtonImage = '/image/login/kakao_login.png';
+    const naverLoginButtonImage = isDark ? '/image/login/naver_login_dark.png' : '/image/login/naver_login_green.png';
+
     return (
         <div className={`sidebar ${isOpen ? 'on' : ''}`}>
             <div className="close">
@@ -43,7 +46,12 @@ function Sidebar({ isOpen, onClick }) {
             <div className="my-info">
                 <div className="title">내 정보</div>
                 <div className="login">
-                    <button>로그인</button>
+                    <button>
+                        <img src={kakaoLoginButtonImage} alt="카카오 로그인" />
+                    </button>
+                    <button>
+                        <img src={naverLoginButtonImage} alt="네이버 로그인" />
+                    </button>
                 </div>
             </div>
             <div className="theme">

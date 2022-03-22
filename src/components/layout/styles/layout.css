@@ -23,7 +23,8 @@ header .sidebar > div.close > svg { cursor: pointer; }
 header .sidebar.on > div.close { opacity: 1; transition: opacity 0s 0.4s }
 header .sidebar > div > div { padding: 5px 0; }
 header .sidebar > div > div.title { font-size: 14px; color: #888; }
-header .sidebar > div.my-info .login button { font-size: 15px; width: 154px; padding: 6px; }
+header .sidebar > div.my-info .login button { padding: 0 5px 0 0; height: 40px; border: none; }
+header .sidebar > div.my-info .login button img { height: 100%; }
 header .sidebar > div.theme .buttons {  }
 header .sidebar > div.theme .buttons button { font-size: 16px; padding: 6px 30px; }
 header .sidebar > div.theme .buttons button:nth-child(1) { border-top-right-radius: 0; border-bottom-right-radius: 0; }
