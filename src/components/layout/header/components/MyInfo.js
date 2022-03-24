@@ -19,7 +19,7 @@ function MyInfo({ user, isDark }) {
         );
     }
 
-    let { nickname, profileThumbnailUrl } = user;
+    const { nickname, profileThumbnailUrl } = user;
     return (
         <div className="my-info">
             <div className="title">내 정보</div>
