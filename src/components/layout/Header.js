@@ -4,7 +4,7 @@ import SidebarIcon from "./header/SidebarIcon";
 import Sidebar from "./header/Sidebar";
 import { useState } from "react";
 
-function Header() {
+function Header({ user }) {
     const [openSidebar, setOpenSidebar] = useState(false);
 
     return (
@@ -14,7 +14,9 @@ function Header() {
                 <TopLogo />
                 <Menus />
             </div>
-            <Sidebar isOpen={openSidebar} onClick={() => setOpenSidebar(false)} />
+            <Sidebar user={user}
+                     isOpen={openSidebar}
+                     onClick={() => setOpenSidebar(false)} />
         </header>
     );
 }
