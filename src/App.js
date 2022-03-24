@@ -31,7 +31,6 @@ function App() {
         BobbyApi.get("/auth/user")
             .then(user => {
                 setUser(user);
-                console.log(user);
             });
     }
 
