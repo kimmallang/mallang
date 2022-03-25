@@ -4,9 +4,10 @@ import BoardApi from "./BoardApi";
 import LoadingPage from "../../common/pages/LoadingPage";
 import { useInView } from "react-intersection-observer";
 import WriteButton from "../../common/buttons/WriteButton";
+import {Link} from "react-router-dom";
 
 function Board() {
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [boards, setBoards] = useState([]);
     const [paging, setPaging] = useState({
         page: 1,
@@ -20,14 +21,14 @@ function Board() {
         const isFirstLoad = (page === 1 && !isLast);
 
         if (isFirstLoad || inView) {
-            loadBoards();
+            loadBoards(isFirstLoad);
         }
 
     }, [inView]);
 
-    const loadBoards = useCallback(() => {
+    const loadBoards = useCallback((isFirstLoad) => {
         const { page, isLast } = paging;
-        if (isLoading || isLast) {
+        if (!isFirstLoad && (isLoading || isLast)) {
             return;
         }
 
@@ -72,13 +73,15 @@ function Board() {
 
     return (
         <div className="board">
-            { boards.length === 0 ? <LoadingPage /> : null}
+            { isLoading ? <LoadingPage /> : null }
             {
                 boards.map((board, index) => (
                     renderBoardCard(index, board, index === (boards.length - 4))
                 ))
             }
-            <WriteButton />
+            <Link to={`/board/write`}>
+                <WriteButton />
+            </Link>
         </div>
     );
 }

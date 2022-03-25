@@ -32,6 +32,13 @@
 .book-card-slides .book-cards .arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; }
 .book-card-slides .book-cards .book-card { display: inline-block; }
 
+.write .title { box-sizing: border-box; padding-top: 20px; }
+.write .title input { box-sizing: border-box; width: 100%; padding: 20px; background-color: #EEE; border: none; }
+.write .contents { box-sizing: border-box; padding-top: 10px; }
+.write .contents textarea { box-sizing: border-box; width: 100%; padding: 20px; resize: none; background-color: #EEE; border: none; height: 300px; }
+.write .save { padding-top: 10px; }
+.write .save button { width: 100%; border-radius: 0; border: none; background-color: #3182f6; padding: 20px 0; color: #FFF; }
+
 .book-list .book { position: relative; height: 182px; }
 .book-list .book { border: 1px solid #EEE; background-color: #FFF; margin: 10px; border-radius: 7px; cursor: pointer; }
 .book-list .book { box-shadow: 1px 1px 4px 1px #EEE; }
@@ -88,7 +95,7 @@
 }
 
 .news { padding-top: 90px; }
-.news .tags { position: fixed; top: 83px; background-color: #FFF; left: 0; width: 100%; padding: 24px 0; text-align: center; overflow: auto; background-color: #EEE; }
+.news .tags { position: fixed; top: 83px; left: 0; width: 100%; padding: 24px 0; text-align: center; overflow: auto; background-color: #EEE; }
 .news .tags > div { display: inline-block; width: 800px; }
 .news .tags button { margin-left: 10px; background-color: #FFF; border: none; padding: 10px 20px; }
 .news .tags button:nth-child(1) { margin-left: 0; }
@@ -106,3 +113,5 @@ body.dark .book { background-color: #222; box-shadow: none; }
 body.dark .news .tags { background-color: #222; }
 body.dark .news .tags button { background-color: #333; }
 body.dark .news .tags button.on { background-color: #3182f6; color: #FFF; border-color: #3182f6; }
+body.dark .write .title input { background-color: #333; color: #FFF; }
+body.dark .write .contents textarea { background-color: #333; color: #FFF; }

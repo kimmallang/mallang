@@ -96,7 +96,7 @@ function News() {
 
     return (
         <div className="news">
-            {isLoading ? <LoadingPage /> : null}
+            { isLoading ? <LoadingPage /> : null }
             <NewsTags newsTags={newsTags} onClick={handleTagClick} />
             {
                 newsList.map((card, index) => renderNewsCard(index, card, index === (newsList.length - 4)))

@@ -4,15 +4,13 @@ import { useState, useEffect } from "react";
 import BookApi from "../BookApi";
 import Book from "./Book";
 import AddBookButton from "../components/AddBookButton";
-import {Link} from "react-router-dom";
 
 function BookList() {
     const [boards, setBoards] = useState([]);
 
     useEffect(() => {
         BookApi.getBooks()
-            .then((boards) => setBoards(boards))
-            .catch(e => console.log(e));
+            .then((boards) => setBoards(boards));
     });
 
     return (
