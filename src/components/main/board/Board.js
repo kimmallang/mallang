@@ -3,6 +3,7 @@ import Card from "../../common/card/Card";
 import BoardApi from "./BoardApi";
 import LoadingPage from "../../common/pages/LoadingPage";
 import { useInView } from "react-intersection-observer";
+import WriteButton from "../../common/buttons/WriteButton";
 
 function Board() {
     const [isLoading, setIsLoading] = useState(false);
@@ -77,6 +78,7 @@ function Board() {
                     renderBoardCard(index, board, index === (boards.length - 4))
                 ))
             }
+            <WriteButton />
         </div>
     );
 }
