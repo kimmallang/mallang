@@ -7,22 +7,25 @@ import { useInView } from "react-intersection-observer";
 function Board() {
     const [isLoading, setIsLoading] = useState(false);
     const [boards, setBoards] = useState([]);
-    const [page, setPage] = useState(1);
-    const [isLast, setIsLast] = useState(false);
+    const [paging, setPaging] = useState({
+        page: 1,
+        isLast: false,
+    });
 
     const [ref, inView] = useInView();
 
     useEffect(() => {
-        loadBoards();
-    }, []);
+        const { page, isLast } = paging;
+        const isFirstLoad = (page === 1 && !isLast);
 
-    useEffect(() => {
-        if (inView) {
+        if (isFirstLoad || inView) {
             loadBoards();
         }
+
     }, [inView]);
 
     const loadBoards = useCallback(() => {
+        const { page, isLast } = paging;
         if (isLoading || isLast) {
             return;
         }
@@ -33,10 +36,12 @@ function Board() {
             .then(({ page, isLast, items }) => {
                 setBoards([...boards, ...items]);
                 setIsLoading(false);
-                setPage(page + 1);
-                setIsLast(isLast);
+                setPaging({
+                    page: page + 1
+                    ,isLast
+                });
             });
-    }, [page, isLast, isLoading, boards]);
+    }, [paging, isLoading, boards]);
 
     const renderBoardCard = (key, { id, title, contents, likeCount, commentsCount, createdAt }, isPagingRef) => {
         if (isPagingRef) {
