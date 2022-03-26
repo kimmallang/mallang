@@ -25,6 +25,11 @@ function BoardView() {
     const loadBoard = () => {
         BoardApi.getBoard(id)
             .then((board => {
+                if (!board) {
+                    alert('존재하지 않는 게시글입니다.');
+                    window.location.href = '/board';
+                }
+
                 setBoard(board);
                 setIsLoading(false);
             }));
@@ -32,6 +37,15 @@ function BoardView() {
 
     const moveToEdit = () => {
         window.location.href = `/board/write/${id}`;
+    };
+
+    const remove = () => {
+        if (window.confirm('삭제하시겠습니까?')) {
+            BoardApi.removeBoard(id)
+                .then(() => {
+                    window.location.href = '/board';
+                });
+        }
     };
 
     const renderBoard = () => {
@@ -46,7 +60,7 @@ function BoardView() {
                     isMine ? (
                         <div className="buttons">
                             <span className="edit" onClick={moveToEdit}><BsPencilFill/></span>
-                            <span className="delete"><RiDeleteBin6Line/></span>
+                            <span className="delete" onClick={remove}><RiDeleteBin6Line/></span>
                         </div>
                     ) : null
                 }

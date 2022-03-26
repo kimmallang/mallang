@@ -43,7 +43,9 @@ function BoardWrite() {
 
     const submit = () => {
         BoardApi.saveBoard({ id, title, contents })
-            .then((data) => console.log(data));
+            .then(() => {
+                window.location.href = `/board/view/${id}`;
+            });
     };
 
     return (

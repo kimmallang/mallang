@@ -43,6 +43,26 @@ const BobbyApi = {
             })
             .catch(() => WebUtil.redirectToErrorPage());
     },
+
+    delete: (path, params) => {
+        const url = BobbyApi.bobbyUrl;
+        const urlPath = path.startsWith('/') ? path : `/${path}`;
+        const queryString = params ? WebUtil.getQueryString(params) : '';
+
+        const headers = {
+            'utkn': CookieUtil.getCookie('utkn'),
+        };
+
+        return axios.delete(`${url}${urlPath}${queryString}`, { headers })
+            .then((resp) => {
+                if (resp.data.status !== 'SUCCESS') {
+                    WebUtil.redirectToErrorPage();
+                }
+
+                return resp.data.data;
+            })
+            .catch(() => WebUtil.redirectToErrorPage());
+    },
 };
 
 export default BobbyApi;

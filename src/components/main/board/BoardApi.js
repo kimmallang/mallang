@@ -17,6 +17,11 @@ const BoardApi = {
         return BobbyApi.post('/free-board', { id, title, contents })
             .catch(() => WebUtil.redirectToErrorPage());
     },
+
+    removeBoard: (id) => {
+        return BobbyApi.delete(`/free-board/${id}`)
+            .catch(() => WebUtil.redirectToErrorPage());
+    },
 }
 
 export default BoardApi;
