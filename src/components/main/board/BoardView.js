@@ -39,7 +39,7 @@ function BoardView() {
             return;
         }
 
-        const { isMine, writerNickname, title, contents, likeCount, commentsCount, createdAt } = board;
+        const { isMine, writerNickname, title, contents, likeCount, commentsCount, createdAt, modifiedAt } = board;
         return (
             <Fragment>
                 {
@@ -52,7 +52,8 @@ function BoardView() {
                 }
                 <div className="title">{title}</div>
                 <div className="writer">{writerNickname}</div>
-                <div className="created-at">{createdAt}</div>
+                <div className={`created-at ${modifiedAt ? 'cancel' : ''}`}>{createdAt}</div>
+                { modifiedAt ? <div className="modified-at">{modifiedAt}</div> : null }
                 <div className="contents">{StringUtil.applyNewLine(contents)}</div>
                 <div className="counts">
                     <div className={`like ${commentsCount === 0 ? 'empty' : ''}`}>

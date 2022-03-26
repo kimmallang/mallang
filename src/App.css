@@ -35,10 +35,12 @@
 .view .buttons > span { display: inline-block; padding: 10px 10px 0 10px; cursor: pointer; }
 .view .buttons .edit { color: #3182f6; }
 .view .buttons .delete { color: #fb5b53; }
-.view .title { padding: 20px; font-size: 18px; }
+.view .title { padding: 20px 20px 0 20px; font-size: 18px; }
 .view .writer { padding: 2px 20px; font-size: 14px; text-align: right; color: #3182f6; }
-.view .created-at { padding: 2px 20px 20px 20px; font-size: 14px; text-align: right; color: #888; }
-.view .contents { padding: 20px; font-size: 16px; }
+.view .created-at { padding: 2px 20px 0 20px; font-size: 14px; text-align: right; color: #888; }
+.view .created-at.cancel { text-decoration: line-through; }
+.view .modified-at { padding: 2px 20px 0 20px; font-size: 14px; text-align: right; color: #888; }
+.view .contents { padding: 40px 20px 20px 20px; font-size: 16px; }
 .view .counts { text-align: right; padding: 20px; }
 .view .counts > div { display: inline-block; padding-left: 20px; }
 .view .counts > div.empty { color: #CCC; }
