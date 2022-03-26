@@ -2,8 +2,14 @@ import BobbyApi from "../../common/api/BobbyApi";
 import WebUtil from "../../../utils/WebUtil";
 
 const BoardApi = {
-    getBoards: ({ page }) => {
-        return BobbyApi.get('/free-board', { page })
+    getBoards: (page) => {
+        const size = 20;
+        return BobbyApi.get('/free-board', { page, size })
+            .catch(() => WebUtil.redirectToErrorPage());
+    },
+
+    getBoard: (id) => {
+        return BobbyApi.get(`/free-board/${id}`)
             .catch(() => WebUtil.redirectToErrorPage());
     },
 

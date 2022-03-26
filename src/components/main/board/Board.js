@@ -34,7 +34,7 @@ function Board() {
 
         setIsLoading(true);
 
-        BoardApi.getBoards({ page })
+        BoardApi.getBoards(page)
             .then(({ page, isLast, items }) => {
                 setBoards([...boards, ...items]);
                 setIsLoading(false);
@@ -45,28 +45,30 @@ function Board() {
             });
     }, [paging, isLoading, boards]);
 
+    const moveToBoardView = (id) => {
+      window.location.href = `/board/view/${id}`;
+    };
+
     const renderBoardCard = (key, { id, title, contents, likeCount, commentsCount, createdAt }, isPagingRef) => {
         if (isPagingRef) {
             return (
-                <div key={key} onClick={() => alert(id)} ref={ref}>
+                <div key={key} onClick={() => moveToBoardView(id)} ref={ref}>
                     <Card title={title}
                           description={contents}
                           likeCount={likeCount}
                           commentsCount={commentsCount}
-                          datetime={createdAt}
-                          onClick={() => alert(id)} />
+                          datetime={createdAt} />
                 </div>
             );
         }
 
         return (
-            <div key={key} onClick={() => alert(id)}>
+            <div key={key} onClick={() => moveToBoardView(id)}>
                 <Card title={title}
                       description={contents}
                       likeCount={likeCount}
                       commentsCount={commentsCount}
-                      datetime={createdAt}
-                      onClick={() => alert(id)} />
+                      datetime={createdAt} />
             </div>
         );
     };

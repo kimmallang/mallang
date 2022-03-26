@@ -1,5 +1,4 @@
 import LoadingPage from "../../../common/pages/LoadingPage";
-import Card from "../../../common/card/Card";
 import { useState, useEffect } from "react";
 import BookApi from "../BookApi";
 import Book from "./Book";
