@@ -13,7 +13,7 @@ function CardCounts({ commentsCount, likeCount }) {
             {
                 hasLikeCount ? (
                     <div className={`like ${likeCount === 0 ? 'empty' : ''}`}>
-                        { likeCount > 0 ? <FcLike/> : <FcLikePlaceholder /> }
+                        <FcLike/>
                         <span>{likeCount.toLocaleString()}</span>
                     </div>
                 ) : null
