@@ -1,3 +1,5 @@
+import {Fragment} from "react";
+
 const StringUtil = {
     textToHtml: (htmlText) => (
         htmlText.replace(/<(\/)?([a-zA-Z]*)(\s[a-zA-Z]*=[^>]*)?(\s)*(\/)?>/ig, '') // html 태그 제거
@@ -16,6 +18,7 @@ const StringUtil = {
             .replace(/&permil;/gi,'‰')
             .replace(/&euro;/gi,'€')
         ),
+    applyNewLine: (text) => text.split('\n').map((line, index) => <Fragment key={index}>{line}<br /></Fragment>),
 };
 
 export default StringUtil;

@@ -5,6 +5,7 @@ import LoadingPage from "../../common/pages/LoadingPage";
 import BoardApi from "./BoardApi";
 import { FcLike, FcLikePlaceholder } from "react-icons/fc";
 import { FaComment } from "react-icons/fa";
+import StringUtil from "../../../utils/StringUtil";
 
 function BoardView() {
     const [isLoading, setIsLoading] = useState(true);
@@ -38,7 +39,7 @@ function BoardView() {
                 <div className="title">{title}</div>
                 <div className="writer">{writerNickname}</div>
                 <div className="created-at">{createdAt}</div>
-                <div className="contents">{contents}</div>
+                <div className="contents">{StringUtil.applyNewLine(contents)}</div>
                 <div className="counts">
                     <div className={`like ${commentsCount === 0 ? 'empty' : ''}`}>
                         { likeCount > 0 ? <FcLike/> : <FcLikePlaceholder /> }
