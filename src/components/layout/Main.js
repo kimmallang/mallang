@@ -19,6 +19,7 @@ function Main() {
                 <Route path='/book/:tag' element={<BookList />} />
                 <Route path='/board' element={<Board />} />
                 <Route path='/board/write' element={<BoardWrite />} />
+                <Route path='/board/write/:id' element={<BoardWrite />} />
                 <Route path='/board/view/:id' element={<BoardView />} />
                 <Route path='/study' element={<Study />} />
                 <Route path='/error' element={<ErrorPage />} />

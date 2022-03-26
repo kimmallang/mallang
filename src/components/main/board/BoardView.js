@@ -4,7 +4,9 @@ import { Fragment, useEffect, useState } from "react";
 import LoadingPage from "../../common/pages/LoadingPage";
 import BoardApi from "./BoardApi";
 import { FcLike, FcLikePlaceholder } from "react-icons/fc";
+import { BsPencilFill } from 'react-icons/bs';
 import { FaComment } from "react-icons/fa";
+import { RiDeleteBin6Line } from "react-icons/ri";
 import StringUtil from "../../../utils/StringUtil";
 
 function BoardView() {
@@ -28,14 +30,26 @@ function BoardView() {
             }));
     };
 
+    const moveToEdit = () => {
+        window.location.href = `/board/write/${id}`;
+    };
+
     const renderBoard = () => {
         if (!board) {
             return;
         }
 
-        const { writerNickname, title, contents, likeCount, commentsCount, createdAt } = board;
+        const { isMine, writerNickname, title, contents, likeCount, commentsCount, createdAt } = board;
         return (
             <Fragment>
+                {
+                    isMine ? (
+                        <div className="buttons">
+                            <span className="edit" onClick={moveToEdit}><BsPencilFill/></span>
+                            <span className="delete"><RiDeleteBin6Line/></span>
+                        </div>
+                    ) : null
+                }
                 <div className="title">{title}</div>
                 <div className="writer">{writerNickname}</div>
                 <div className="created-at">{createdAt}</div>
