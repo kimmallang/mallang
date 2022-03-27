@@ -8,13 +8,16 @@ import WebUtil from "./utils/WebUtil";
 import CookieUtil from "./utils/CookieUtil";
 import BobbyApi from "./components/common/api/BobbyApi";
 import { useEffect, useState } from "react";
+import LoginUtil from "./utils/LoginUtil";
 
 function App() {
     const [user, setUser] = useState(null);
     const utkn = WebUtil.getUrlSearchParam('utkn');
 
     useEffect(() => {
-        loadUser();
+        if (!window.location.href.includes('/error')) {
+            loadUser();
+        }
     }, []);
 
     if (utkn) {
@@ -23,8 +26,7 @@ function App() {
     }
 
     const loadUser = () => {
-        const isLogin = (CookieUtil.getCookie('utkn') !== '');
-        if (!isLogin) {
+        if (!LoginUtil.isLogin()) {
             return;
         }
 

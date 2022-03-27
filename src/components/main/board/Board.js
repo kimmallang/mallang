@@ -4,7 +4,7 @@ import BoardApi from "./BoardApi";
 import LoadingPage from "../../common/pages/LoadingPage";
 import { useInView } from "react-intersection-observer";
 import WriteButton from "../../common/buttons/WriteButton";
-import {Link} from "react-router-dom";
+import LoginUtil from "../../../utils/LoginUtil";
 
 function Board() {
     const [isLoading, setIsLoading] = useState(true);
@@ -49,6 +49,17 @@ function Board() {
       window.location.href = `/board/view/${id}`;
     };
 
+    const moveToBoardWrite = () => {
+        if (!LoginUtil.isLogin()) {
+            if (window.confirm('로그인 페이지로 이동하시겠습니까?')) {
+                // todo
+            }
+
+            return;
+        }
+        window.location.href = '/board/write';
+    };
+
     const renderBoardCard = (key, { id, title, contents, likeCount, commentsCount, createdAt }, isPagingRef) => {
         if (isPagingRef) {
             return (
@@ -81,9 +92,7 @@ function Board() {
                     renderBoardCard(index, board, index === (boards.length - 4))
                 ))
             }
-            <Link to={`/board/write`}>
-                <WriteButton />
-            </Link>
+            <WriteButton onClick={moveToBoardWrite} />
         </div>
     );
 }

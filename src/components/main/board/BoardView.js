@@ -8,8 +8,10 @@ import { BsPencilFill } from 'react-icons/bs';
 import { FaComment } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import StringUtil from "../../../utils/StringUtil";
+import LoginUtil from "../../../utils/LoginUtil";
 
 function BoardView() {
+    const [isLock, setIsLock] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [board, setBoard] = useState(null);
 
@@ -48,12 +50,65 @@ function BoardView() {
         }
     };
 
+    const like = () => {
+        if (!LoginUtil.isLogin()) {
+            if (window.confirm('로그인 페이지로 이동하시겠습니까?')) {
+                // todo
+            }
+
+            return;
+        }
+
+        if (isLock || isLoading) {
+            return;
+        }
+
+        lock();
+
+        BoardApi.likeBoard(id)
+            .then(() => {
+                board.isLike = true;
+                board.likeCount += 1;
+                setBoard(board);
+            });
+    };
+
+    const unLike = () => {
+        if (!LoginUtil.isLogin()) {
+            if (window.confirm('로그인 페이지로 이동하시겠습니까?')) {
+                // todo
+            }
+
+            return;
+        }
+
+        if (isLock || isLoading) {
+            return;
+        }
+
+        lock();
+
+        BoardApi.unLikeBoard(id)
+            .then(() => {
+                board.isLike = false;
+                board.likeCount -= 1;
+                setBoard(board);
+            });
+    };
+
+    const lock = () => {
+        setIsLock(true);
+        setTimeout(() => {
+            setIsLock(false);
+        }, 700);
+    };
+
     const renderBoard = () => {
         if (!board) {
             return;
         }
 
-        const { isMine, writerNickname, title, contents, likeCount, commentsCount, createdAt, modifiedAt } = board;
+        const { isMine, writerNickname, title, contents, isLike, likeCount, commentsCount, createdAt, modifiedAt } = board;
         return (
             <Fragment>
                 {
@@ -69,17 +124,27 @@ function BoardView() {
                 <div className={`created-at ${modifiedAt ? 'cancel' : ''}`}>{createdAt}</div>
                 { modifiedAt ? <div className="modified-at">{modifiedAt}</div> : null }
                 <div className="contents">{StringUtil.applyNewLine(contents)}</div>
-                <div className="counts">
-                    <div className={`like ${commentsCount === 0 ? 'empty' : ''}`}>
-                        { likeCount > 0 ? <FcLike/> : <FcLikePlaceholder /> }
-                        <span>{likeCount.toLocaleString()}</span>
-                    </div>
-                    <div className={`comments ${commentsCount === 0 ? 'empty' : ''}`}>
-                        <FaComment />
-                        <span>{commentsCount.toLocaleString()}</span>
-                    </div>
-                </div>
+                { renderCounts(isLike, likeCount, commentsCount) }
             </Fragment>
+        );
+    };
+
+    const renderCounts = (isLike, likeCount, commentsCount) => {
+        return (
+            <div className="counts">
+                <div className={`like ${likeCount === 0 ? 'empty' : ''}`}>
+                    {
+                        isLike
+                            ? <FcLike onClick={unLike} />
+                            : <FcLikePlaceholder onClick={like} />
+                    }
+                    <span>{likeCount.toLocaleString()}</span>
+                </div>
+                <div className={`comments ${commentsCount === 0 ? 'empty' : ''}`}>
+                    <FaComment />
+                    <span>{commentsCount.toLocaleString()}</span>
+                </div>
+            </div>
         );
     };
 

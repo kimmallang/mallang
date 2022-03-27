@@ -22,6 +22,16 @@ const BoardApi = {
         return BobbyApi.delete(`/free-board/${id}`)
             .catch(() => WebUtil.redirectToErrorPage());
     },
+
+    likeBoard: (id) => {
+        return BobbyApi.post(`/free-board/like/${id}`)
+            .catch(() => WebUtil.redirectToErrorPage());
+    },
+
+    unLikeBoard: (id) => {
+        return BobbyApi.delete(`/free-board/like/${id}`)
+            .catch(() => WebUtil.redirectToErrorPage());
+    },
 }
 
 export default BoardApi;
