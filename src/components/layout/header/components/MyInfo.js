@@ -2,7 +2,7 @@ import LoginButtons from "../../../common/buttons/login/LoginButtons";
 import { MdLogout } from 'react-icons/md';
 import CookieUtil from "../../../../utils/CookieUtil";
 
-function MyInfo({ user, isDark }) {
+function MyInfo({ user }) {
     const logout = () => {
         if (window.confirm('로그아웃 하시겠습니까?')) {
             CookieUtil.removeCookie('utkn');
@@ -14,7 +14,7 @@ function MyInfo({ user, isDark }) {
         return (
             <div className="my-info">
                 <div className="title">내 정보</div>
-                <LoginButtons isDark={isDark} />
+                <LoginButtons />
             </div>
         );
     }

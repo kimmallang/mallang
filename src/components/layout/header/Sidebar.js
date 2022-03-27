@@ -5,6 +5,7 @@ import HtmlUtil from "../../../utils/HtmlUtil";
 import CookieUtil from "../../../utils/CookieUtil";
 import LoginButtons from "../../common/buttons/login/LoginButtons";
 import MyInfo from "./components/MyInfo";
+import EnvUtil from "../../../utils/EnvUtil";
 
 function Sidebar({ user, isOpen, onClick }) {
     const darkModeClassName = 'dark';
@@ -28,13 +29,13 @@ function Sidebar({ user, isOpen, onClick }) {
     const setDarkMode = () => {
         HtmlUtil.addBodyClassName(darkModeClassName);
         setIsDark(true);
-        CookieUtil.setCookie('dark', true);
+        EnvUtil.setDark(true);
     };
 
     const setLightMode = () => {
         HtmlUtil.removeBodyClassName(darkModeClassName);
         setIsDark(false);
-        CookieUtil.removeCookie('dark');
+        EnvUtil.setDark(false);
     };
 
     return (
@@ -42,7 +43,7 @@ function Sidebar({ user, isOpen, onClick }) {
             <div className="close">
                 <IoMdClose onClick={onClick} />
             </div>
-            <MyInfo user={user} isDark={isDark} />
+            <MyInfo user={user} />
             <div className="theme">
                 <div className="title">화면 테마</div>
                 <div className="buttons">

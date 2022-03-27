@@ -123,6 +123,13 @@
 /* buttons */
 button { background: none; border: 1px solid #888; border-radius: 3px; color: #555; cursor: pointer; padding: 6px 12px; font-size: 14px; }
 
+.login button { padding: 0; border: none; }
+.login button img { width: 100%; border: 1px solid #EEE; }
+.login.wide button { width: 200px; }
+.sidebar .login button { width: 80px; }
+.sidebar .login button.naver { margin-left: 6px; }
+.sidebar .login button img { border-radius: 3px; }
+
 /* dark mode */
 body.dark .card { background-color: #333; border-color: #444; }
 body.dark button { color: #EEE; }
@@ -135,3 +142,6 @@ body.dark .news .tags button.on { background-color: #3182f6; color: #FFF; border
 body.dark .view { background-color: #333; border-color: #444; }
 body.dark .write .title input { background-color: #333; color: #FFF; }
 body.dark .write .contents textarea { background-color: #333; color: #FFF; }
+body.dark .login button img { border: 1px solid #333; }
+body.dark .login button.naver img { content:url("/public/image/login/naver_login_dark.png"); }
+body.dark .login.wide button.naver img { content:url("/public/image/login/naver_login_wide_dark.png"); }

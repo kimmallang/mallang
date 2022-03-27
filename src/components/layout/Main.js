@@ -8,6 +8,7 @@ import BookCardSlides from "../main/book/book-card-slides/BookCardSlides";
 import BookList from "../main/book/book-list/BookList";
 import BoardWrite from "../main/board/BoardWrite";
 import BoardView from "../main/board/BoardView";
+import LoginPage from "../common/pages/LoginPage";
 
 function Main() {
     return (
@@ -23,6 +24,7 @@ function Main() {
                 <Route path='/board/view/:id' element={<BoardView />} />
                 <Route path='/study' element={<Study />} />
                 <Route path='/error' element={<ErrorPage />} />
+                <Route path='/login' element={<LoginPage />} />
                 <Route path='*' element={<NotFoundPage />} />
             </Routes>
         </main>

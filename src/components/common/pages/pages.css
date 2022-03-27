@@ -7,3 +7,9 @@
 .page.page-not-found > div { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 .page.page-not-found > div > h1 { font-size: 24px; }
 .page.page-not-found > div > p { font-size: 15px; }
+
+.page.login > div { text-align: center; color: #333; }
+.page.login > div { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.page.login > div > h1 { font-size: 24px; }
+.page.login > div > p { font-size: 15px; }
+.page.login > div .login button { padding: 0 5px 0 0; height: 40px; border: none; }

@@ -23,8 +23,6 @@ header .sidebar > div.close > svg { cursor: pointer; }
 header .sidebar.on > div.close { opacity: 1; transition: opacity 0s 0.4s }
 header .sidebar > div > div { padding: 5px 0; }
 header .sidebar > div > div.title { font-size: 14px; color: #888; }
-header .sidebar > div.my-info .login button { padding: 0 5px 0 0; height: 40px; border: none; }
-header .sidebar > div.my-info .login button img { height: 100%; }
 header .sidebar > div.my-info > div { display: inline-block; vertical-align: middle; }
 header .sidebar > div.my-info > div.title { display: block; }
 header .sidebar > div.my-info > div.profile-image { width: 70px; }
@@ -52,10 +50,9 @@ main > div { padding-top: 10px; }
 
 /* dark mode */
 body.dark { background-color: #222; color: #EEE; }
-body.dark header { background-color: #222; /*border-bottom: 1px solid #EEE;*/ }
+body.dark header { background-color: #222; border-bottom: 1px solid #555; }
 body.dark header .sidebar { background-color: #222; }
 body.dark main { background-color: #222; }
-body.dark header .menus a { color: #EEE; }
+body.dark header .menus a { color: #EEE; border-color: #555; }
 body.dark header .sidebar > div.close { color: #EEE; }
 body.dark header .sidebar button { color: #EEE; }
-

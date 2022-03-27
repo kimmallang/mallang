@@ -52,10 +52,7 @@ function BoardView() {
 
     const like = () => {
         if (!LoginUtil.isLogin()) {
-            if (window.confirm('로그인 페이지로 이동하시겠습니까?')) {
-                // todo
-            }
-
+            WebUtil.confirmMoveToLoginPage();
             return;
         }
 
@@ -75,10 +72,7 @@ function BoardView() {
 
     const unLike = () => {
         if (!LoginUtil.isLogin()) {
-            if (window.confirm('로그인 페이지로 이동하시겠습니까?')) {
-                // todo
-            }
-
+            WebUtil.confirmMoveToLoginPage();
             return;
         }
 

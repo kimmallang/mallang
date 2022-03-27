@@ -5,6 +5,7 @@ import LoadingPage from "../../common/pages/LoadingPage";
 import { useInView } from "react-intersection-observer";
 import WriteButton from "../../common/buttons/WriteButton";
 import LoginUtil from "../../../utils/LoginUtil";
+import WebUtil from "../../../utils/WebUtil";
 
 function Board() {
     const [isLoading, setIsLoading] = useState(true);
@@ -51,10 +52,7 @@ function Board() {
 
     const moveToBoardWrite = () => {
         if (!LoginUtil.isLogin()) {
-            if (window.confirm('로그인 페이지로 이동하시겠습니까?')) {
-                // todo
-            }
-
+            WebUtil.confirmMoveToLoginPage();
             return;
         }
         window.location.href = '/board/write';
