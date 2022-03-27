@@ -1,13 +1,10 @@
 import LoginButtons from "../../../common/buttons/login/LoginButtons";
 import { MdLogout } from 'react-icons/md';
-import CookieUtil from "../../../../utils/CookieUtil";
+import WebUtil from "../../../../utils/WebUtil";
 
 function MyInfo({ user }) {
     const logout = () => {
-        if (window.confirm('로그아웃 하시겠습니까?')) {
-            CookieUtil.removeCookie('utkn');
-            window.location.reload();
-        }
+        WebUtil.confirmLogout();
     };
 
     if (!user) {
