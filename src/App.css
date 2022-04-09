@@ -101,7 +101,9 @@
 .arrow-left > svg { top: 50%; left: 40%; transform: translate(-40%, -50%); }
 .arrow-right > svg { top: 50%; left: 60%; transform: translate(-60%, -50%); }
 
-.write-button { position: fixed; bottom: 40px; right: 40px; background-color: #3182f6; color: #FFF; padding: 20px; font-size: 20px; border-radius: 100px; }
+.write-button { position: fixed; bottom: 40px; right: 40px; background-color: #3182f6DD; color: #FFF; padding: 20px; font-size: 20px; border-radius: 100px; cursor: pointer; }
+.top-button { display: none; position: fixed; bottom: 40px; left: 40px; background-color: #DDDDDDAA; color: #333; padding: 20px; font-size: 20px; border-radius: 100px; cursor: pointer; }
+.top-button.show { display: inline-block; }
 
 /* PC */
 .book-card-slides .book-cards .arrow-left { left: -40px; }
@@ -142,6 +144,7 @@ body.dark .news .tags button.on { background-color: #3182f6; color: #FFF; border
 body.dark .view { background-color: #333; border-color: #444; }
 body.dark .write .title input { background-color: #333; color: #FFF; }
 body.dark .write .contents textarea { background-color: #333; color: #FFF; }
+body.dark .top-button { background-color: #DDDDDD55; color: #333; }
 body.dark .login button img { border: 1px solid #333; }
 body.dark .login button.naver img { content:url("/public/image/login/naver_login_dark.png"); }
 body.dark .login.wide button.naver img { content:url("/public/image/login/naver_login_wide_dark.png"); }

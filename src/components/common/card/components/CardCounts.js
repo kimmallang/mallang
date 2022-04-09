@@ -1,5 +1,5 @@
 import { FaComment } from "react-icons/fa";
-import { FcLike, FcLikePlaceholder } from "react-icons/fc";
+import { FcLike } from "react-icons/fc";
 
 function CardCounts({ commentsCount, likeCount }) {
     const hasLikeCount = (likeCount || likeCount === 0);

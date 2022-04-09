@@ -9,6 +9,7 @@ import CookieUtil from "./utils/CookieUtil";
 import BobbyApi from "./components/common/api/BobbyApi";
 import { useEffect, useState } from "react";
 import LoginUtil from "./utils/LoginUtil";
+import TopButton from "./components/common/buttons/TopButton";
 
 function App() {
     const [user, setUser] = useState(null);
@@ -40,6 +41,7 @@ function App() {
         <Router>
             <Header user={user} />
             <Main />
+            <TopButton />
         </Router>
     );
 }
