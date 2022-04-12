@@ -52,10 +52,10 @@ function BoardWrite() {
         <div className="write board-write">
             { isLoading ? <LoadingPage /> : null }
             <div className="title">
-                <input type="text" value={title} onChange={handleTitleChange} placeholder="제목을 입력해주세요." />
+                <input type='text' value={title} onChange={handleTitleChange} placeholder="제목을 입력해주세요" />
             </div>
             <div className="contents">
-                <textarea value={contents} onChange={handleContentsChange} placeholder="내용을 입력해주세요." spellCheck="false" />
+                <textarea value={contents} onChange={handleContentsChange} placeholder="내용을 입력해주세요" spellCheck="false" />
             </div>
             <div className="save" onClick={submit}>
                 <button>{ !id ? '등록' : '수정'}</button>

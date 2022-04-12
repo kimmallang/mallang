@@ -9,6 +9,8 @@ import { FaComment } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import StringUtil from "../../../utils/StringUtil";
 import LoginUtil from "../../../utils/LoginUtil";
+import CommentListView from "../../common/comment/CommentListView";
+import LikeCommentCount from "../../common/view/LikeCommentCount";
 
 function BoardView() {
     const [isLock, setIsLock] = useState(false);
@@ -118,35 +120,23 @@ function BoardView() {
                 <div className={`created-at ${modifiedAt ? 'cancel' : ''}`}>{createdAt}</div>
                 { modifiedAt ? <div className="modified-at">{modifiedAt}</div> : null }
                 <div className="contents">{StringUtil.applyNewLine(contents)}</div>
-                { renderCounts(isLike, likeCount, commentsCount) }
+                <LikeCommentCount like={like}
+                                  unLike={unLike}
+                                  isLike={isLike}
+                                  likeCount={likeCount}
+                                  commentsCount={commentsCount} />
             </Fragment>
         );
     };
 
-    const renderCounts = (isLike, likeCount, commentsCount) => {
-        return (
-            <div className="counts">
-                <div className={`like ${likeCount === 0 ? 'empty' : ''}`}>
-                    {
-                        isLike
-                            ? <FcLike onClick={unLike} />
-                            : <FcLikePlaceholder onClick={like} />
-                    }
-                    <span>{likeCount.toLocaleString()}</span>
-                </div>
-                <div className={`comments ${commentsCount === 0 ? 'empty' : ''}`}>
-                    <FaComment />
-                    <span>{commentsCount.toLocaleString()}</span>
-                </div>
-            </div>
-        );
-    };
-
     return (
-        <div className="view board-view">
-            { isLoading ? <LoadingPage /> : null }
-            { renderBoard() }
-        </div>
+        <Fragment>
+            <div className="view board-view">
+                { isLoading ? <LoadingPage /> : null }
+                { renderBoard() }
+            </div>
+            <CommentListView />
+        </Fragment>
     );
 }
 

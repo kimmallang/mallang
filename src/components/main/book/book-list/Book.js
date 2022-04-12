@@ -1,5 +1,5 @@
 import CardStars from "../../../common/card/components/CardStars";
-import CardCounts from "../../../common/card/components/CardCounts";
+import LikeCommentCount from "../../../common/view/LikeCommentCount";
 
 function Book({ imageUrl, title, author, price, publisher, pubDate, description, starScore, starCount, commentsCount }) {
     return (
@@ -14,7 +14,7 @@ function Book({ imageUrl, title, author, price, publisher, pubDate, description,
                 <span className="pubDate">{pubDate}</span>
             </div>
             <CardStars starScore={starScore} starCount={starCount} />
-            <CardCounts commentsCount={commentsCount} />
+            <LikeCommentCount commentsCount={commentsCount} />
         </div>
     );
 }

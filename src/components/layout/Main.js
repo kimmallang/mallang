@@ -9,6 +9,7 @@ import BookList from "../main/book/book-list/BookList";
 import BoardWrite from "../main/board/BoardWrite";
 import BoardView from "../main/board/BoardView";
 import LoginPage from "../common/pages/LoginPage";
+import CommentView from "../common/comment/CommentView";
 
 function Main() {
     return (
@@ -22,6 +23,7 @@ function Main() {
                 <Route path='/board/write' element={<BoardWrite />} />
                 <Route path='/board/write/:id' element={<BoardWrite />} />
                 <Route path='/board/view/:id' element={<BoardView />} />
+                <Route path='/board/comment/view/:id' element={<CommentView type="board" />} />
                 <Route path='/study' element={<Study />} />
                 <Route path='/error' element={<ErrorPage />} />
                 <Route path='/login' element={<LoginPage />} />

@@ -30,7 +30,7 @@
 .book-card-slides .book-cards .arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; }
 .book-card-slides .book-cards .book-card { display: inline-block; }
 
-.view { margin-top: 20px; background-color: #EEEEEEAA; border: 1px solid #EEE; }
+.view { margin: 20px 0; background-color: #EEEEEEAA; border: 1px solid #EEE; }
 .view .buttons { padding: 0 10px 0 0; text-align: right; }
 .view .buttons > span { display: inline-block; padding: 10px 10px 0 10px; cursor: pointer; }
 .view .buttons .edit { color: #3182f6; }
@@ -49,8 +49,38 @@
 .view .counts > div.comments > svg { color: #3182f6; }
 .view .counts > div.comments > span { color: #3182f6; }
 .view .counts > div.comments.empty > span { color: #CCC; }
+.view .counts > div.like { cursor: pointer; }
 .view .counts > div.like > span { color: #fb5b53; }
 .view .counts > div.like.empty > span { color: #CCC; }
+
+.comment .more { text-align: center; padding: 20px; background-color: #EEE; cursor: pointer; border: 1px solid #DDD; }
+.comment .comment-view { position: relative; margin-top: 5px; background-color: #EEEEEEAA; border: 1px solid #EEE; }
+.comment .comment-view .info { padding: 20px 20px 0 20px; }
+.comment .comment-view .info .nickname { padding: 0; font-size: 14px; text-align: right; color: #3182f6; }
+.comment .comment-view .info .created-at { padding-left: 10px; font-size: 14px; text-align: right; color: #888; }
+.comment .comment-view .info .created-at.cancel { text-decoration: line-through; }
+.comment .comment-view .info .modified-at { padding-left: 10px; font-size: 14px; text-align: right; color: #888; }
+.comment .comment-view .contents { padding: 10px 20px 20px 20px; font-size: 16px; }
+.comment .comment-view .counts { text-align: right; padding: 20px; }
+.comment .comment-view .counts > div { display: inline-block; padding-left: 20px; }
+.comment .comment-view .counts > div.empty { color: #CCC; }
+.comment .comment-view .counts > div > svg { font-size: 18px; }
+.comment .comment-view .counts > div > span { font-size: 14px; margin-left: 5px; }
+.comment .comment-view .counts > div.comments > svg { color: #3182f6; }
+.comment .comment-view .counts > div.comments > span { color: #3182f6; }
+.comment .comment-view .counts > div.comments.empty > span { color: #CCC; }
+.comment .comment-view .counts > div.like { cursor: pointer; }
+.comment .comment-view .counts > div.like > span { color: #fb5b53; }
+.comment .comment-view .counts > div.like.empty > span { color: #CCC; }
+.comment .comment-view .comment-reply { background-color: #EEE; padding: 0 20px; border-top: 1px solid #DDD; }
+.comment .comment-view .comment-view-button { position: absolute; left: 20px; bottom: 20px; }
+.comment .comment-view .comment-view-button button { border: none; background-color: #DDD; color: #555; }
+.comment .comment-write { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 1280px; background-color: #FFF; border: 1px solid #EEE; border-bottom: none; box-sizing: border-box; }
+.comment .comment-write > div { display: inline-block; }
+.comment .comment-write > div.contents { box-sizing: border-box; width: 100%; padding-right: 70px; }
+.comment .comment-write > div.contents textarea { box-sizing: border-box; width: 100%; padding: 14px; resize: none; border: none; font-size: 16px; line-height: 20px; }
+.comment .comment-write > div.save { position: absolute; top: 0; right: 0; width: 70px; height: 100%; background-color: #3182f6; }
+.comment .comment-write > div.save button { width: 100%; padding: 10px 0; border: none; background: none; font-size: 16px; height: 100%; border-radius: 0; color: #FFF; }
 
 .write .title { box-sizing: border-box; padding-top: 20px; }
 .write .title input { box-sizing: border-box; width: 100%; padding: 20px; background-color: #EEEEEEAA; border: none; }
@@ -96,13 +126,13 @@
 .book-card-slides .add-book, .book-list .add-book { box-sizing: border-box; width: 100%; text-align: center; padding-top: 10px; max-width: 1280px; min-width: 350px; }
 .book-card-slides .add-book button, .book-list .add-book button { background-color: #FFF; color: #3182f6; border-color: #3182f6; }
 
-.arrow { position: relative; display: inline-block; width: 50px; height: 50px; border-radius: 100%; background: none; color: #DDD; cursor: pointer; }
+.arrow { position: relative; display: inline-block; width: 50px; height: 50px; border-radius: 100%; background: none; color: #AAA; cursor: pointer; }
 .arrow > svg { position: absolute; display: inline-block; width: 25px; height: 25px; }
 .arrow-left > svg { top: 50%; left: 40%; transform: translate(-40%, -50%); }
 .arrow-right > svg { top: 50%; left: 60%; transform: translate(-60%, -50%); }
 
 .write-button { position: fixed; bottom: 40px; right: 40px; background-color: #3182f6DD; color: #FFF; padding: 20px; font-size: 20px; border-radius: 100px; cursor: pointer; }
-.top-button { display: none; position: fixed; bottom: 40px; left: 40px; background-color: #DDDDDDAA; color: #333; padding: 20px; font-size: 20px; border-radius: 100px; cursor: pointer; }
+.top-button { display: none; position: fixed; bottom: 120px; right: 40px; background-color: #DDDDDDAA; color: #333; padding: 20px; font-size: 20px; border-radius: 100px; cursor: pointer; }
 .top-button.show { display: inline-block; }
 
 /* PC */
@@ -142,6 +172,12 @@ body.dark .news .tags { background-color: #222; }
 body.dark .news .tags button { background-color: #333; }
 body.dark .news .tags button.on { background-color: #3182f6; color: #FFF; border-color: #3182f6; }
 body.dark .view { background-color: #333; border-color: #444; }
+body.dark .comment .comment-view { background-color: #333; border-color: #444; }
+body.dark .comment .comment-view .comment-reply { background-color: #444; border-top: 1px solid #555; }
+body.dark .comment .comment-view .comment-view-button button { border: none; background-color: #555; color: #CCC; }
+
+
+body.dark .comment .more { background-color: #444; border-color: #555; }
 body.dark .write .title input { background-color: #333; color: #FFF; }
 body.dark .write .contents textarea { background-color: #333; color: #FFF; }
 body.dark .top-button { background-color: #DDDDDD55; color: #333; }

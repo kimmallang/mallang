@@ -1,10 +1,10 @@
-import CardCounts from "./components/CardCounts";
 import CardStars from "./components/CardStars";
 import CardDatetime from "./components/CardDatetime";
 import CardTitle from "./components/CardTitle";
 import CardImage from "./components/CardImage";
 import CardSubTitle from "./components/CardSubTitle";
 import CardDescription from "./components/CardDescription";
+import LikeCommentCount from "../view/LikeCommentCount";
 
 function Card({ datetime, title, imageUrl, subTitle, description, starScore, starCount, commentsCount, likeCount }) {
     return (
@@ -15,7 +15,7 @@ function Card({ datetime, title, imageUrl, subTitle, description, starScore, sta
             <CardSubTitle subTitle={subTitle} />
             <CardDescription description={description} />
             <CardStars starScore={starScore} starCount={starCount} />
-            <CardCounts commentsCount={commentsCount} likeCount={likeCount} />
+            <LikeCommentCount commentsCount={commentsCount} likeCount={likeCount} isLike />
         </div>
     );
 }
