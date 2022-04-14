@@ -1,9 +1,9 @@
 import { FaComment } from "react-icons/fa";
 import { FcLike } from "react-icons/fc";
 
-function CardCounts({ commentsCount, likeCount }) {
+function CardCounts({ commentCount, likeCount }) {
     const hasLikeCount = (likeCount || likeCount === 0);
-    const hasCommentCount = (commentsCount || commentsCount === 0);
+    const hasCommentCount = (commentCount || commentCount === 0);
     if (!hasLikeCount && !hasCommentCount) {
         return null;
     }
@@ -20,9 +20,9 @@ function CardCounts({ commentsCount, likeCount }) {
             }
             {
                 hasCommentCount ? (
-                        <div className={`comments ${commentsCount === 0 ? 'empty' : ''}`}>
+                        <div className={`comments ${commentCount === 0 ? 'empty' : ''}`}>
                             <FaComment />
-                            <span>{commentsCount.toLocaleString()}</span>
+                            <span>{commentCount.toLocaleString()}</span>
                         </div>
                     ) : null
             }

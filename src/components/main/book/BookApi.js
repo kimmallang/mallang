@@ -5,7 +5,7 @@ const booksDummy = [
         imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         starScore: 5,
         starCount: 25,
-        commentsCount: 456,
+        commentCount: 456,
     },
     {
         id: 2,
@@ -13,7 +13,7 @@ const booksDummy = [
         imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         starScore: 0,
         starCount: 0,
-        commentsCount: 0,
+        commentCount: 0,
     },
     {
         id: 3,
@@ -21,7 +21,7 @@ const booksDummy = [
         imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         starScore: 4,
         starCount: 123456,
-        commentsCount: 456,
+        commentCount: 456,
     },
     {
         id: 4,
@@ -29,7 +29,7 @@ const booksDummy = [
         imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         starScore: 3.5,
         starCount: 123,
-        commentsCount: 456,
+        commentCount: 456,
     },
     {
         id: 5,
@@ -37,7 +37,7 @@ const booksDummy = [
         imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         starScore: 3.5,
         starCount: 123,
-        commentsCount: 456,
+        commentCount: 456,
     },
     {
         id: 6,
@@ -45,7 +45,7 @@ const booksDummy = [
         imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         starScore: 3.5,
         starCount: 123,
-        commentsCount: 456,
+        commentCount: 456,
     },
     {
         id: 7,
@@ -53,7 +53,7 @@ const booksDummy = [
         imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         starScore: 3.5,
         starCount: 123,
-        commentsCount: 456,
+        commentCount: 456,
     },
     {
         id: 8,
@@ -61,7 +61,7 @@ const booksDummy = [
         imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         starScore: 3.5,
         starCount: 123,
-        commentsCount: 456,
+        commentCount: 456,
     },
     {
         id: 9,
@@ -69,7 +69,7 @@ const booksDummy = [
         imageUrl: 'https://bookthumb-phinf.pstatic.net/cover/092/525/09252528.jpg?type=m5&udate=20200721',
         starScore: 3.5,
         starCount: 123,
-        commentsCount: 456,
+        commentCount: 456,
     },
 ];
 
@@ -111,7 +111,7 @@ const bookListDummy = [
         pubDate: '2016-07-29',
         starScore: 5,
         starCount: 25,
-        commentsCount: 456,
+        commentCount: 456,
     },
     {
         id: 2,
@@ -123,7 +123,7 @@ const bookListDummy = [
         pubDate: '2016-07-29',
         starScore: 5,
         starCount: 25,
-        commentsCount: 456,
+        commentCount: 456,
     },
     {
         id: 3,
@@ -135,7 +135,7 @@ const bookListDummy = [
         pubDate: '2016-07-29',
         starScore: 5,
         starCount: 25,
-        commentsCount: 456,
+        commentCount: 456,
     },
     {
         id: 4,
@@ -147,7 +147,7 @@ const bookListDummy = [
         pubDate: '2016-07-29',
         starScore: 5,
         starCount: 25,
-        commentsCount: 456,
+        commentCount: 456,
     },
     {
         id: 5,
@@ -159,7 +159,7 @@ const bookListDummy = [
         pubDate: '2016-07-29',
         starScore: 5,
         starCount: 25,
-        commentsCount: 456,
+        commentCount: 456,
     },
     {
         id: 6,
@@ -171,7 +171,7 @@ const bookListDummy = [
         pubDate: '2016-07-29',
         starScore: 5,
         starCount: 25,
-        commentsCount: 456,
+        commentCount: 456,
     },
     {
         id: 7,
@@ -183,7 +183,7 @@ const bookListDummy = [
         pubDate: '2016-07-29',
         starScore: 5,
         starCount: 25,
-        commentsCount: 456,
+        commentCount: 456,
     },
     {
         id: 8,
@@ -195,7 +195,7 @@ const bookListDummy = [
         pubDate: '2016-07-29',
         starScore: 5,
         starCount: 25,
-        commentsCount: 456,
+        commentCount: 456,
     },
     {
         id: 9,
@@ -207,7 +207,7 @@ const bookListDummy = [
         pubDate: '2016-07-29',
         starScore: 5,
         starCount: 25,
-        commentsCount: 456,
+        commentCount: 456,
     },
     {
         id: 10,
@@ -219,7 +219,7 @@ const bookListDummy = [
         pubDate: '2016-07-29',
         starScore: 5,
         starCount: 25,
-        commentsCount: 456,
+        commentCount: 456,
     },
 ];
 

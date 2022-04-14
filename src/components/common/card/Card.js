@@ -6,7 +6,7 @@ import CardSubTitle from "./components/CardSubTitle";
 import CardDescription from "./components/CardDescription";
 import LikeCommentCount from "../view/LikeCommentCount";
 
-function Card({ datetime, title, imageUrl, subTitle, description, starScore, starCount, commentsCount, likeCount }) {
+function Card({ datetime, title, imageUrl, subTitle, description, starScore, starCount, commentCount, likeCount }) {
     return (
         <div className="card">
             <CardDatetime datetime={datetime} />
@@ -15,7 +15,7 @@ function Card({ datetime, title, imageUrl, subTitle, description, starScore, sta
             <CardSubTitle subTitle={subTitle} />
             <CardDescription description={description} />
             <CardStars starScore={starScore} starCount={starCount} />
-            <LikeCommentCount commentsCount={commentsCount} likeCount={likeCount} isLike />
+            <LikeCommentCount commentCount={commentCount} likeCount={likeCount} isLike />
         </div>
     );
 }

@@ -23,7 +23,7 @@ function Main() {
                 <Route path='/board/write' element={<BoardWrite />} />
                 <Route path='/board/write/:id' element={<BoardWrite />} />
                 <Route path='/board/view/:id' element={<BoardView />} />
-                <Route path='/board/comment/view/:id' element={<CommentView type="board" />} />
+                <Route path='/board/comment/view/:parentId/:id' element={<CommentView type="board" />} />
                 <Route path='/study' element={<Study />} />
                 <Route path='/error' element={<ErrorPage />} />
                 <Route path='/login' element={<LoginPage />} />

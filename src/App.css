@@ -35,12 +35,12 @@
 .view .buttons > span { display: inline-block; padding: 10px 10px 0 10px; cursor: pointer; }
 .view .buttons .edit { color: #3182f6; }
 .view .buttons .delete { color: #fb5b53; }
-.view .title { padding: 20px 20px 0 20px; font-size: 18px; }
+.view .title { padding: 20px 20px 0 20px; font-size: 18px; overflow: hidden; text-overflow: ellipsis; }
 .view .writer { padding: 2px 20px; font-size: 14px; text-align: right; color: #3182f6; }
 .view .created-at { padding: 2px 20px 0 20px; font-size: 14px; text-align: right; color: #888; }
 .view .created-at.cancel { text-decoration: line-through; }
 .view .modified-at { padding: 2px 20px 0 20px; font-size: 14px; text-align: right; color: #888; }
-.view .contents { padding: 40px 20px 20px 20px; font-size: 16px; }
+.view .contents { padding: 40px 20px 20px 20px; font-size: 16px; overflow: hidden; }
 .view .counts { text-align: right; padding: 20px; }
 .view .counts > div { display: inline-block; padding-left: 20px; }
 .view .counts > div.empty { color: #CCC; }
@@ -60,7 +60,7 @@
 .comment .comment-view .info .created-at { padding-left: 10px; font-size: 14px; text-align: right; color: #888; }
 .comment .comment-view .info .created-at.cancel { text-decoration: line-through; }
 .comment .comment-view .info .modified-at { padding-left: 10px; font-size: 14px; text-align: right; color: #888; }
-.comment .comment-view .contents { padding: 10px 20px 20px 20px; font-size: 16px; }
+.comment .comment-view .contents { padding: 10px 20px 20px 20px; font-size: 16px; overflow: hidden; }
 .comment .comment-view .counts { text-align: right; padding: 20px; }
 .comment .comment-view .counts > div { display: inline-block; padding-left: 20px; }
 .comment .comment-view .counts > div.empty { color: #CCC; }
@@ -75,11 +75,11 @@
 .comment .comment-view .comment-reply { background-color: #EEE; padding: 0 20px; border-top: 1px solid #DDD; }
 .comment .comment-view .comment-view-button { position: absolute; left: 20px; bottom: 20px; }
 .comment .comment-view .comment-view-button button { border: none; background-color: #DDD; color: #555; }
-.comment .comment-write { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 1280px; background-color: #FFF; border: 1px solid #EEE; border-bottom: none; box-sizing: border-box; }
+.comment .comment-write { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 1280px; background-color: #FFF; border: none; border-top: 1px solid #EEE; box-sizing: border-box; }
 .comment .comment-write > div { display: inline-block; }
 .comment .comment-write > div.contents { box-sizing: border-box; width: 100%; padding-right: 70px; }
 .comment .comment-write > div.contents textarea { box-sizing: border-box; width: 100%; padding: 14px; resize: none; border: none; font-size: 16px; line-height: 20px; }
-.comment .comment-write > div.save { position: absolute; top: 0; right: 0; width: 70px; height: 100%; background-color: #3182f6; }
+.comment .comment-write > div.save { position: absolute; top: 0; right: 0; width: 70px; height: 100%; background-color: #3182f6; border: none; }
 .comment .comment-write > div.save button { width: 100%; padding: 10px 0; border: none; background: none; font-size: 16px; height: 100%; border-radius: 0; color: #FFF; }
 
 .write .title { box-sizing: border-box; padding-top: 20px; }
@@ -175,6 +175,9 @@ body.dark .view { background-color: #333; border-color: #444; }
 body.dark .comment .comment-view { background-color: #333; border-color: #444; }
 body.dark .comment .comment-view .comment-reply { background-color: #444; border-top: 1px solid #555; }
 body.dark .comment .comment-view .comment-view-button button { border: none; background-color: #555; color: #CCC; }
+body.dark .comment .comment-write { background-color: #333; border-top: 1px solid #555; }
+body.dark .comment .comment-write textarea { background-color: #333; border: none; color: #FFF; }
+body.dark .comment .comment-write > div.save button { color: #FFF; }
 
 
 body.dark .comment .more { background-color: #444; border-color: #555; }

@@ -11,15 +11,15 @@ function Board() {
     const [isLoading, setIsLoading] = useState(true);
     const [boards, setBoards] = useState([]);
     const [paging, setPaging] = useState({
-        page: 1,
+        cursor: 0,
         isLast: false,
     });
 
     const [ref, inView] = useInView();
 
     useEffect(() => {
-        const { page, isLast } = paging;
-        const isFirstLoad = (page === 1 && !isLast);
+        const { cursor, isLast } = paging;
+        const isFirstLoad = (cursor === 0 && !isLast);
 
         if (isFirstLoad || inView) {
             loadBoards(isFirstLoad);
@@ -28,21 +28,18 @@ function Board() {
     }, [inView]);
 
     const loadBoards = useCallback((isFirstLoad) => {
-        const { page, isLast } = paging;
+        const { cursor, isLast } = paging;
         if (!isFirstLoad && (isLoading || isLast)) {
             return;
         }
 
         setIsLoading(true);
 
-        BoardApi.getBoards(page)
-            .then(({ page, isLast, items }) => {
+        BoardApi.getBoards(cursor)
+            .then(({ cursor, isLast, items }) => {
                 setBoards([...boards, ...items]);
                 setIsLoading(false);
-                setPaging({
-                    page: page + 1
-                    ,isLast
-                });
+                setPaging({ cursor, isLast });
             });
     }, [paging, isLoading, boards]);
 
@@ -58,14 +55,14 @@ function Board() {
         window.location.href = '/board/write';
     };
 
-    const renderBoardCard = (key, { id, title, contents, likeCount, commentsCount, createdAt }, isPagingRef) => {
+    const renderBoardCard = (key, { id, title, contents, likeCount, commentCount, createdAt }, isPagingRef) => {
         if (isPagingRef) {
             return (
                 <div key={key} onClick={() => moveToBoardView(id)} ref={ref}>
                     <Card title={title}
                           description={contents}
                           likeCount={likeCount}
-                          commentsCount={commentsCount}
+                          commentCount={commentCount}
                           datetime={createdAt} />
                 </div>
             );
@@ -76,7 +73,7 @@ function Board() {
                 <Card title={title}
                       description={contents}
                       likeCount={likeCount}
-                      commentsCount={commentsCount}
+                      commentCount={commentCount}
                       datetime={createdAt} />
             </div>
         );

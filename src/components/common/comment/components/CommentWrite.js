@@ -1,11 +1,17 @@
 import { useState } from "react";
+import CommentApi from "../CommentApi";
 
-function CommentWrite() {
+function CommentWrite({ type, parentId }) {
     const defaultRowCount = 1;
     const focusedRowCount = 4;
 
     const [rows, setRows] = useState(defaultRowCount);
     const [contents, setContents] = useState('');
+
+    const handleSubmit = () => {
+        CommentApi.saveComment(type, { parentId, contents })
+            .then(() => window.location.reload());
+    };
 
     const handleFocus = () => {
         setRows(focusedRowCount);
@@ -32,8 +38,8 @@ function CommentWrite() {
                           onChange={handleChange}
                           placeholder="댓글을 입력해주세요" />
             </div>
-            <div className={`save ${rows === defaultRowCount ? '' : 'focused'}`}>
-                <button>등록</button>
+            <div className="save">
+                <button onClick={handleSubmit}>등록</button>
             </div>
         </div>
     );

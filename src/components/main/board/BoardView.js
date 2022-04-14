@@ -5,7 +5,6 @@ import LoadingPage from "../../common/pages/LoadingPage";
 import BoardApi from "./BoardApi";
 import { FcLike, FcLikePlaceholder } from "react-icons/fc";
 import { BsPencilFill } from 'react-icons/bs';
-import { FaComment } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import StringUtil from "../../../utils/StringUtil";
 import LoginUtil from "../../../utils/LoginUtil";
@@ -104,7 +103,7 @@ function BoardView() {
             return;
         }
 
-        const { isMine, writerNickname, title, contents, isLike, likeCount, commentsCount, createdAt, modifiedAt } = board;
+        const { isMine, writerNickname, title, contents, isLike, likeCount, commentCount, createdAt, modifiedAt } = board;
         return (
             <Fragment>
                 {
@@ -124,7 +123,7 @@ function BoardView() {
                                   unLike={unLike}
                                   isLike={isLike}
                                   likeCount={likeCount}
-                                  commentsCount={commentsCount} />
+                                  commentCount={commentCount} />
             </Fragment>
         );
     };
@@ -135,7 +134,7 @@ function BoardView() {
                 { isLoading ? <LoadingPage /> : null }
                 { renderBoard() }
             </div>
-            <CommentListView />
+            <CommentListView parentId={id} type="board" />
         </Fragment>
     );
 }

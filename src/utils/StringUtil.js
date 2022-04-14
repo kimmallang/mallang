@@ -1,7 +1,7 @@
 import {Fragment} from "react";
 
 const StringUtil = {
-    textToHtml: (htmlText) => (
+    textToHtml: (htmlText) => htmlText ? (
         htmlText.replace(/<(\/)?([a-zA-Z]*)(\s[a-zA-Z]*=[^>]*)?(\s)*(\/)?>/ig, '') // html 태그 제거
             .replace(/&nbsp;/gi,' ')
             .replace(/&quot;/gi,'"')
@@ -17,8 +17,8 @@ const StringUtil = {
             .replace(/&bdquo;/gi,'„')
             .replace(/&permil;/gi,'‰')
             .replace(/&euro;/gi,'€')
-        ),
-    applyNewLine: (text) => text.split('\n').map((line, index) => <Fragment key={index}>{line}<br /></Fragment>),
+        ) : '',
+    applyNewLine: (text) => text ? text.split('\n').map((line, index) => <Fragment key={index}>{line}<br /></Fragment>) : '',
 };
 
 export default StringUtil;
