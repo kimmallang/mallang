@@ -2,7 +2,7 @@ import BobbyApi from "../../common/api/BobbyApi";
 import WebUtil from "../../../utils/WebUtil";
 
 const apiPath = {
-    'board': '/free-board-comment-reply',
+    'board': '/free-board-reply',
 };
 
 const getSaveObject = (type, {id, parentId, contents}) => {
