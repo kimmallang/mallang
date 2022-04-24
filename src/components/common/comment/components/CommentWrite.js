@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CommentApi from "../CommentApi";
+import LoadingPage from "../../pages/LoadingPage";
 
 function CommentWrite({ type, parentId }) {
     const defaultRowCount = 1;
@@ -7,10 +8,17 @@ function CommentWrite({ type, parentId }) {
 
     const [rows, setRows] = useState(defaultRowCount);
     const [contents, setContents] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = () => {
+        if (isLoading || contents.trim().length === 0) {
+            return;
+        }
+
+        setIsLoading(true);
         CommentApi.saveComment(type, { parentId, contents })
-            .then(() => window.location.reload());
+            .then(() => window.location.reload())
+            .finally(() => setIsLoading(false));
     };
 
     const handleFocus = () => {
@@ -29,6 +37,7 @@ function CommentWrite({ type, parentId }) {
 
     return (
         <div className="comment-write">
+            { isLoading ? <LoadingPage/> : null }
             <div className="contents">
                 <textarea rows={rows}
                           value={contents}

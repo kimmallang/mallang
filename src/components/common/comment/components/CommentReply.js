@@ -1,4 +1,5 @@
 import LikeCommentCount from "../../view/LikeCommentCount";
+import StringUtil from "../../../../utils/StringUtil";
 
 function CommentReply({ nickname, contents, likeCount, createdAt, modifiedAt }) {
     return (
@@ -8,7 +9,7 @@ function CommentReply({ nickname, contents, likeCount, createdAt, modifiedAt }) 
                 <div className={`created-at ${modifiedAt ? 'cancel' : ''}`}>{createdAt}</div>
                 { modifiedAt ? <div className="modified-at">{modifiedAt}</div> : null }
             </div>
-            <div className="contents">{contents}</div>
+            <div className="contents">{StringUtil.applyNewLine(contents)}</div>
             <LikeCommentCount isLike={false}
                               likeCount={likeCount} />
         </div>
